@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 import { BedDouble, Users, Binoculars, Compass, ArrowRight } from 'lucide-react';
 import { services } from '@/data/content';
 
-const heroImage = 'https://images.pexels.com/photos/5267250/pexels-photo-5267250.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1800';
+const heroImage = 'https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&q=80';
 
 const serviceImages = [
-  'https://images.pexels.com/photos/1001437/pexels-photo-1001437.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
-  'https://images.pexels.com/photos/16444281/pexels-photo-16444281.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
-  'https://images.pexels.com/photos/6790638/pexels-photo-6790638.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
-  'https://images.pexels.com/photos/9754304/pexels-photo-9754304.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
+  'https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1506161642106-2598379c6a7f?auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1547471080-7cb2acd472c4?auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1517825738774-7de9363ef735?auto=format&fit=crop&q=80',
 ];
 
 const serviceIcons: Record<string, typeof BedDouble> = { BedDouble, Users, Binoculars, Compass };

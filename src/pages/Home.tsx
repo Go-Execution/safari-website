@@ -7,8 +7,8 @@ import {
 } from '@/data/content';
 
 // High-resolution wildlife photography matching the reference screenshot
-const heroBannerImage = 'https://images.pexels.com/photos/6995536/pexels-photo-6995536.jpeg?auto=compress&cs=tinysrgb&h=1200&w=2000';
-const panoramicCtaImage = 'https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&h=900&w=2000';
+const heroBannerImage = 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80';
+const panoramicCtaImage = 'https://images.unsplash.com/photo-1534143093226-0e1ce0b7b14d?auto=format&fit=crop&q=80';
 
 export default function Home() {
   const [visibleStoriesCount, setVisibleStoriesCount] = useState<number>(6);

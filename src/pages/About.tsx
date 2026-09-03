@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Quote, ShieldCheck, Award, HeartHandshake } from 'lucide-react';
 import { pillars, testimonials } from '@/data/content';
 
-const heroImage = 'https://images.pexels.com/photos/16444281/pexels-photo-16444281.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1800';
+const heroImage = 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&q=80';
 
 const pillarImages = [
-  'https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
-  'https://images.pexels.com/photos/6995536/pexels-photo-6995536.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
-  'https://images.pexels.com/photos/17435022/pexels-photo-17435022.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
-  'https://images.pexels.com/photos/16444284/pexels-photo-16444284.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
-  'https://images.pexels.com/photos/20523197/pexels-photo-20523197.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
+  'https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1506161642106-2598379c6a7f?auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1547471080-7cb2acd472c4?auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1517825738774-7de9363ef735?auto=format&fit=crop&q=80',
 ];
 
 export default function About() {

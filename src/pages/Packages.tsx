@@ -3,7 +3,7 @@ import { ArrowRight, Compass } from 'lucide-react';
 import { packages } from '@/data/content';
 import PackageCard from '@/components/PackageCard';
 
-const heroImage = 'https://images.pexels.com/photos/35722304/pexels-photo-35722304.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1800';
+const heroImage = 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&q=80';
 
 export default function Packages() {
   return (
