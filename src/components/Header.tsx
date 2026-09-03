@@ -1,16 +1,15 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Mail, ArrowUpRight } from 'lucide-react';
+import { Menu, X, Search, Phone } from 'lucide-react';
 import { SITE, navLinks } from '@/data/content';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
-  const isHome = location.pathname === '/';
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -24,120 +23,125 @@ export default function Header() {
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
-  const isTransparent = isHome && !scrolled;
   const handleNavClick = useCallback(() => setMenuOpen(false), []);
 
   return (
     <>
-      {/* Utility bar */}
-      <div className={`hidden lg:block bg-espresso-dark text-sand/70 text-xs transition-all duration-300 ${scrolled && !isHome ? 'max-h-0 overflow-hidden opacity-0' : 'max-h-10 opacity-100'}`}>
-        <div className="mx-auto max-w-content px-6 lg:px-12 flex items-center justify-between py-2">
-          <div className="flex items-center gap-6">
-            <a href={`tel:${SITE.phoneHref}`} className="flex items-center gap-2 hover:text-amber transition-colors">
-              <Phone size={12} className="text-amber" />
-              <span>{SITE.phone}</span>
-            </a>
-            <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 hover:text-amber transition-colors">
-              <Mail size={12} className="text-amber" />
-              <span>{SITE.email}</span>
-            </a>
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="text-sand/40">Follow</span>
-            <a href="#" className="hover:text-amber transition-colors">Instagram</a>
-            <a href="#" className="hover:text-amber transition-colors">Facebook</a>
-          </div>
-        </div>
-      </div>
+      {/* Top NatGeo Global Header */}
+      <header className={`sticky top-0 z-40 bg-black border-b border-white/10 transition-all duration-300 ${scrolled ? 'shadow-xl' : ''}`}>
+        <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-14 sm:h-16">
+            
+            {/* Left: NatGeo Iconic Yellow Border Logo */}
+            <div className="flex items-center gap-6 lg:gap-8">
+              <Link to="/" className="flex items-center gap-2.5 shrink-0 group" onClick={handleNavClick}>
+                {/* NatGeo Signature Yellow Frame */}
+                <div className="w-5 h-7 sm:w-6 sm:h-8 border-[3px] border-natgeo-yellow flex items-center justify-center shrink-0 transition-transform group-hover:scale-105" />
+                <div className="flex flex-col">
+                  <span className="font-natgeo font-extrabold text-base sm:text-lg tracking-wider uppercase text-white leading-none">
+                    SAFARI KNIGHT
+                  </span>
+                  <span className="font-natgeo font-semibold text-[9px] sm:text-[10px] tracking-widest text-natgeo-yellow uppercase leading-tight mt-0.5">
+                    BOTSWANA EXPEDITIONS
+                  </span>
+                </div>
+              </Link>
 
-      {/* Main header */}
-      <header className={`sticky top-0 z-40 transition-all duration-500 ${isTransparent ? 'bg-transparent' : 'bg-espresso/95 backdrop-blur-md border-b border-espresso-light/20'}`}>
-        <div className="mx-auto max-w-content px-5 lg:px-12">
-          <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 shrink-0" onClick={handleNavClick}>
-              <img src={SITE.logo} alt="Safari Knight Tours logo" className="h-9 lg:h-11 w-auto object-contain brightness-0 invert" />
-              <span className="font-display text-lg lg:text-xl font-medium leading-none text-cream hidden sm:block">
-                Safari Knight
-              </span>
-            </Link>
+              {/* Desktop Nav Links in NatGeo Style */}
+              <nav className="hidden xl:flex items-center gap-6">
+                {navLinks.map((link) => {
+                  const isActive = location.pathname === link.path;
+                  return (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className={`text-xs font-natgeo font-bold uppercase tracking-wider transition-colors relative py-1 ${
+                        isActive
+                          ? 'text-natgeo-yellow'
+                          : 'text-white/90 hover:text-natgeo-yellow'
+                      }`}
+                    >
+                      {link.label}
+                      {isActive && (
+                        <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-natgeo-yellow" />
+                      )}
+                    </Link>
+                  );
+                })}
+              </nav>
+            </div>
 
-            {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center gap-8">
-              {navLinks.slice(0, 5).map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`text-sm font-medium tracking-wide transition-colors relative group py-2 ${
-                    isTransparent ? 'text-cream/85 hover:text-amber' : 'text-cream/85 hover:text-amber'
-                  } ${location.pathname === link.path ? 'text-amber' : ''}`}
-                >
-                  {link.label}
-                  <span className={`absolute -bottom-0.5 left-0 h-px bg-amber origin-left transition-transform duration-400 ${location.pathname === link.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
-                </Link>
-              ))}
-            </nav>
+            {/* Right: Search, Contact info, and Yellow CTA Button */}
+            <div className="flex items-center gap-3 sm:gap-5">
+              {/* Call indicator */}
+              <a
+                href={`tel:${SITE.phoneHref}`}
+                className="hidden md:flex items-center gap-1.5 text-xs text-white/80 hover:text-natgeo-yellow font-natgeo tracking-wider uppercase transition-colors"
+                title="Call safari desk"
+              >
+                <Phone size={13} className="text-natgeo-yellow" />
+                <span>{SITE.phone.split('/')[0]}</span>
+              </a>
 
-            {/* CTA + hamburger */}
-            <div className="flex items-center gap-3">
+              {/* NatGeo Yellow Action Button */}
               <Link
                 to="/plan-your-trip"
-                className="hidden sm:inline-flex items-center gap-1.5 bg-terracotta text-cream px-5 py-2.5 text-sm font-semibold tracking-wide hover:bg-terracotta-light transition-colors group"
+                className="bg-natgeo-yellow hover:bg-natgeo-yellowHover text-black font-natgeo font-extrabold text-xs sm:text-sm tracking-wider uppercase px-4 sm:px-5 py-2 transition-colors shadow-sm"
               >
-                Plan Your Trip
-                <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                PLAN EXPEDITION
               </Link>
+
+              {/* Mobile hamburger button */}
               <button
-                onClick={() => setMenuOpen(true)}
-                className="lg:hidden p-2 -mr-2 text-cream"
-                aria-label="Open menu"
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="xl:hidden p-1.5 text-white hover:text-natgeo-yellow transition-colors"
+                aria-label="Toggle navigation menu"
               >
-                <Menu size={26} />
+                {menuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
           </div>
         </div>
-      </header>
 
-      {/* Mobile overlay menu */}
-      {menuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden">
-          <div className="absolute inset-0 bg-espresso-dark/98 backdrop-blur-md" onClick={() => setMenuOpen(false)} />
-          <div className="relative h-full flex flex-col">
-            <div className="flex items-center justify-between px-5 h-16 border-b border-espresso-light/20">
-              <img src={SITE.logo} alt="Safari Knight Tours" className="h-8 w-auto brightness-0 invert" />
-              <button onClick={() => setMenuOpen(false)} className="p-2 -mr-2 text-cream" aria-label="Close menu">
-                <X size={26} />
-              </button>
-            </div>
-            <nav className="flex-1 flex flex-col justify-center px-5 gap-1">
+        {/* Mobile Navigation Drawer */}
+        {menuOpen && (
+          <div className="xl:hidden bg-black/98 border-t border-white/15 px-5 py-6 space-y-4 animate-fade-in max-h-[85vh] overflow-y-auto">
+            <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={handleNavClick}
-                  className={`font-display text-3xl font-light py-3 transition-colors ${location.pathname === link.path ? 'text-amber' : 'text-cream hover:text-amber'}`}
+                  className={`text-base font-natgeo font-bold uppercase tracking-wider py-2 border-b border-white/10 ${
+                    location.pathname === link.path
+                      ? 'text-natgeo-yellow'
+                      : 'text-white hover:text-natgeo-yellow'
+                  }`}
                 >
                   {link.label}
                 </Link>
               ))}
-            </nav>
-            <div className="px-5 pb-8 pt-6 border-t border-espresso-light/20 space-y-3">
-              <a href={`tel:${SITE.phoneHref}`} className="flex items-center gap-3 text-cream/75 text-sm">
-                <Phone size={16} className="text-amber" />
-                {SITE.phone}
+            </div>
+
+            <div className="pt-4 border-t border-white/15 flex flex-col gap-3">
+              <a
+                href={`tel:${SITE.phoneHref}`}
+                className="flex items-center gap-2 text-sm text-white/90 hover:text-natgeo-yellow font-natgeo uppercase tracking-wide"
+              >
+                <Phone size={16} className="text-natgeo-yellow" />
+                <span>Call Us: {SITE.phone}</span>
               </a>
-              <a href={`mailto:${SITE.email}`} className="flex items-center gap-3 text-cream/75 text-sm">
-                <Mail size={16} className="text-amber" />
-                {SITE.email}
-              </a>
-              <Link to="/plan-your-trip" onClick={handleNavClick} className="block w-full text-center bg-terracotta text-cream font-semibold py-3.5 mt-4">
-                Plan Your Trip
+              <Link
+                to="/plan-your-trip"
+                onClick={handleNavClick}
+                className="w-full text-center bg-natgeo-yellow text-black font-natgeo font-extrabold text-sm uppercase tracking-wider py-3 mt-2"
+              >
+                Plan Your Safari Trip
               </Link>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </header>
     </>
   );
 }

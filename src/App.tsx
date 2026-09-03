@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import FloatingEnquiry from '@/components/FloatingEnquiry';
 import ScrollToTop from '@/components/ScrollToTop';
 import Home from '@/pages/Home';
 import About from '@/pages/About';
@@ -29,7 +28,6 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
-        <FloatingEnquiry />
       </div>
     </BrowserRouter>
   );

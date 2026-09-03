@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import {
-  Clock, Tag, BedDouble, Utensils, CheckCircle2, ArrowUpRight,
-  ChevronDown, MapPin, ArrowLeft, Star,
+  Clock, Tag, BedDouble, Utensils, CheckCircle2, ArrowRight,
+  ChevronDown, MapPin, ArrowLeft, Star, Compass,
 } from 'lucide-react';
 import { getPackage } from '@/data/content';
 import EnquiryModal from '@/components/EnquiryModal';
@@ -16,91 +16,134 @@ export default function PackageDetail() {
   if (!pkg) return <Navigate to="/packages" replace />;
 
   return (
-    <div className="bg-sand">
-      {/* Hero band */}
-      <section className="relative h-[62vh] min-h-[440px] overflow-hidden">
+    <div className="bg-white text-black min-h-screen">
+      {/* Hero Banner with NatGeo Framing */}
+      <section className="relative h-[65vh] min-h-[460px] overflow-hidden bg-black flex items-end pb-12 sm:pb-16">
         <div className="absolute inset-0">
-          <img src={pkg.heroImage} alt={pkg.name} className="w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/35 to-espresso/25" />
+          <img
+            src={pkg.heroImage}
+            alt={pkg.name}
+            className="w-full h-full object-cover object-center brightness-70"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
         </div>
-        <div className="relative h-full flex items-end pb-10 lg:pb-16">
-          <div className="mx-auto max-w-content px-5 lg:px-12 w-full">
-            <Link to="/packages" className="inline-flex items-center gap-1.5 text-cream/60 text-sm hover:text-amber transition-colors mb-5">
-              <ArrowLeft size={15} />
-              All packages
-            </Link>
-            <span className="inline-block bg-amber/90 text-espresso text-xs font-semibold px-3 py-1.5 tracking-wide mb-5">
-              {pkg.category}
-            </span>
-            <h1 className="font-display text-3xl lg:text-h1 font-light text-cream leading-tight max-w-3xl text-balance">
+
+        <div className="relative mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8 w-full z-10">
+          <Link
+            to="/packages"
+            className="inline-flex items-center gap-1.5 text-white/70 text-xs font-natgeo font-bold uppercase tracking-wider hover:text-natgeo-yellow transition-colors mb-4"
+          >
+            <ArrowLeft size={14} />
+            Back to All Expeditions
+          </Link>
+
+          <div className="border-l-[6px] border-natgeo-yellow pl-5 sm:pl-7 max-w-3xl animate-fade-up">
+            <div className="flex items-center gap-2 text-natgeo-yellow font-natgeo font-extrabold text-xs uppercase tracking-widest mb-2">
+              <span className="w-2 h-2 bg-natgeo-yellow inline-block" />
+              <span>{pkg.category}</span>
+            </div>
+            <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               {pkg.name}
             </h1>
-            <div className="flex flex-wrap items-center gap-6 mt-6 text-cream/85">
-              <span className="flex items-center gap-2 text-base">
-                <Clock size={17} className="text-amber" />
-                {pkg.duration}
+
+            <div className="flex flex-wrap items-center gap-6 mt-5 text-white/90 text-sm">
+              <span className="flex items-center gap-1.5 font-natgeo font-bold uppercase tracking-wider">
+                <Clock size={16} className="text-natgeo-yellow" />
+                <span>{pkg.duration}</span>
               </span>
-              <span className="flex items-center gap-2 text-base">
-                <Tag size={17} className="text-amber" />
-                {pkg.price}
+              <span className="flex items-center gap-1.5 font-natgeo font-bold uppercase tracking-wider">
+                <Tag size={16} className="text-natgeo-yellow" />
+                <span>{pkg.price}</span>
               </span>
             </div>
-            {pkg.priceNote && <p className="text-cream/50 text-sm mt-2 max-w-xl">{pkg.priceNote}</p>}
+
+            {pkg.priceNote && (
+              <p className="text-white/60 text-xs mt-2 max-w-xl font-normal">
+                {pkg.priceNote}
+              </p>
+            )}
+
             <button
               onClick={() => setEnquiryOpen(true)}
-              className="mt-7 inline-flex items-center gap-2 bg-terracotta text-cream font-semibold px-6 py-3.5 hover:bg-terracotta-light transition-colors group"
+              className="mt-6 inline-flex items-center gap-2 bg-natgeo-yellow hover:bg-natgeo-yellowHover text-black font-natgeo font-extrabold text-xs sm:text-sm uppercase tracking-wider px-6 py-3 transition-colors shadow-sm"
             >
-              Enquire About This Package
-              <ArrowUpRight size={17} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              Inquire About This Expedition
+              <ArrowRight size={15} />
             </button>
           </div>
         </div>
       </section>
 
-      {/* Overview + info blocks */}
-      <section className="py-16 lg:py-24 bg-sand">
-        <div className="mx-auto max-w-content px-5 lg:px-12">
-          <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16">
-            <div>
-              <p className="eyebrow text-terracotta mb-4">Trip overview</p>
-              <h2 className="font-display text-2xl lg:text-h3 font-light text-ink mb-6 leading-snug">{pkg.overview}</h2>
+      {/* Overview & Field Specs */}
+      <section className="py-16 sm:py-20 bg-white border-b border-gray-200">
+        <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+            
+            {/* Main Overview Column */}
+            <div className="lg:col-span-8">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-2 h-2 bg-natgeo-yellow inline-block" />
+                <span className="font-natgeo font-extrabold text-xs uppercase tracking-widest text-black">
+                  EXPEDITION OVERVIEW
+                </span>
+              </div>
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-black mb-6 leading-snug">
+                {pkg.overview}
+              </h2>
+
               {pkg.highlights && (
-                <div className="mt-8">
-                  <h3 className="eyebrow text-inkSoft mb-4">Highlights</h3>
-                  <ul className="space-y-3">
+                <div className="mt-8 pt-6 border-t border-gray-200">
+                  <h3 className="font-natgeo font-extrabold text-xs uppercase tracking-widest text-gray-500 mb-4">
+                    EXPEDITION HIGHLIGHTS & SIGHTINGS
+                  </h3>
+                  <ul className="grid sm:grid-cols-2 gap-3">
                     {pkg.highlights.map((h, i) => (
-                      <li key={i} className="flex items-start gap-3 text-inkSoft">
-                        <CheckCircle2 size={18} className="text-sage shrink-0 mt-0.5" />
+                      <li key={i} className="flex items-start gap-2.5 text-sm text-gray-800">
+                        <CheckCircle2 size={16} className="text-natgeo-yellow shrink-0 mt-0.5" />
                         <span>{h}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               )}
+
               {pkg.note && (
-                <div className="mt-8 flex items-start gap-3 bg-sage/10 p-4 border-l-2 border-sage">
-                  <MapPin size={20} className="text-sage-dark shrink-0 mt-0.5" />
-                  <p className="text-sm text-inkSoft">{pkg.note}</p>
+                <div className="mt-8 flex items-start gap-3 bg-natgeo-lightBg p-4 border-l-4 border-natgeo-yellow">
+                  <MapPin size={18} className="text-black shrink-0 mt-0.5" />
+                  <p className="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                    {pkg.note}
+                  </p>
                 </div>
               )}
             </div>
-            <div className="space-y-4">
+
+            {/* Sidebar Specifications */}
+            <div className="lg:col-span-4 space-y-5">
               {pkg.accommodation && (
-                <div className="bg-cream p-6 border border-ink/8">
-                  <div className="flex items-center gap-2.5 mb-3">
-                    <BedDouble size={20} className="text-espresso" />
-                    <h3 className="eyebrow text-ink">Accommodation</h3>
+                <div className="bg-natgeo-lightBg p-6 border border-gray-200">
+                  <div className="flex items-center gap-2 mb-2.5">
+                    <BedDouble size={18} className="text-natgeo-yellow" />
+                    <h3 className="font-natgeo font-extrabold text-xs uppercase tracking-widest text-black">
+                      WILDERNESS ACCOMMODATION
+                    </h3>
                   </div>
-                  <p className="text-sm text-inkSoft leading-relaxed">{pkg.accommodation}</p>
+                  <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
+                    {pkg.accommodation}
+                  </p>
                 </div>
               )}
+
               {pkg.meals && (
-                <div className="bg-cream p-6 border border-ink/8">
-                  <div className="flex items-center gap-2.5 mb-3">
-                    <Utensils size={20} className="text-espresso" />
-                    <h3 className="eyebrow text-ink">Meals & drinks</h3>
+                <div className="bg-natgeo-lightBg p-6 border border-gray-200">
+                  <div className="flex items-center gap-2 mb-2.5">
+                    <Utensils size={18} className="text-natgeo-yellow" />
+                    <h3 className="font-natgeo font-extrabold text-xs uppercase tracking-widest text-black">
+                      BUSH MEALS & DRINKS
+                    </h3>
                   </div>
-                  <p className="text-sm text-inkSoft leading-relaxed">{pkg.meals}</p>
+                  <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
+                    {pkg.meals}
+                  </p>
                 </div>
               )}
             </div>
@@ -108,54 +151,68 @@ export default function PackageDetail() {
         </div>
       </section>
 
-      {/* Day-by-day itinerary — editorial timeline */}
-      <section className="py-20 lg:py-32 bg-cream">
-        <div className="mx-auto max-w-content px-5 lg:px-12">
-          <div className="mb-12 lg:mb-16">
-            <p className="eyebrow text-terracotta mb-5">Itinerary</p>
-            <h2 className="font-display text-3xl lg:text-h2 font-light text-ink">Day by day</h2>
+      {/* Day-by-day Itinerary Logs */}
+      <section className="py-16 sm:py-24 bg-natgeo-lightBg border-b border-gray-200">
+        <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+          <div className="mb-10">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="w-2.5 h-2.5 bg-natgeo-yellow inline-block" />
+              <span className="font-natgeo font-extrabold text-xs tracking-widest text-black uppercase">
+                FIELD LOG & TIMELINE
+              </span>
+            </div>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-black">
+              Day-by-Day Expedition Dossier
+            </h2>
           </div>
-          <div className="max-w-3xl">
+
+          <div className="max-w-4xl space-y-4">
             {pkg.itinerary.map((day, i) => {
               const isOpen = openDay === i;
               return (
-                <div key={i} className="border-b border-ink/10">
+                <div key={i} className="bg-white border border-gray-200 overflow-hidden shadow-xs">
                   <button
                     onClick={() => setOpenDay(isOpen ? null : i)}
-                    className="w-full flex items-center gap-5 py-5 text-left group"
+                    className="w-full flex items-center justify-between p-5 text-left group hover:bg-gray-50 transition-colors"
                   >
-                    <span className="font-display text-3xl font-light text-terracotta/30 group-hover:text-terracotta/50 shrink-0 w-14 text-right transition-colors">
-                      {i + 1}
-                    </span>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-display text-lg font-medium text-ink">
+                    <div className="flex items-center gap-4">
+                      <span className="font-natgeo font-bold text-base sm:text-lg text-natgeo-yellow bg-black px-2.5 py-1">
                         {day.day}
-                        {day.title && <span className="text-inkSoft font-normal"> — {day.title}</span>}
-                      </p>
+                      </span>
+                      <span className="font-display font-bold text-base sm:text-lg text-black group-hover:text-natgeo-yellowHover transition-colors">
+                        {day.title || `Day ${i + 1} Safari`}
+                      </span>
                     </div>
-                    <ChevronDown size={20} className={`text-ink/40 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown
+                      size={18}
+                      className={`text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-black' : ''}`}
+                    />
                   </button>
-                  <div className={`overflow-hidden transition-all duration-400 ${isOpen ? 'max-h-[2000px]' : 'max-h-0'}`}>
-                    <div className="pb-6 pl-14 pr-4">
-                      <p className="text-sm lg:text-base text-inkSoft leading-relaxed">{day.text}</p>
+
+                  {isOpen && (
+                    <div className="p-6 pt-2 border-t border-gray-100 animate-fade-in">
+                      <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-normal">
+                        {day.text}
+                      </p>
+
                       {(day.highlights || day.meals) && (
-                        <div className="flex flex-wrap gap-3 mt-5">
+                        <div className="flex flex-wrap gap-2.5 mt-5 pt-4 border-t border-gray-100 text-xs">
                           {day.highlights && (
-                            <span className="inline-flex items-center gap-1.5 text-xs bg-sage/15 text-sage-dark px-3 py-1.5 font-medium">
-                              <Star size={12} />
-                              {day.highlights}
+                            <span className="inline-flex items-center gap-1.5 bg-natgeo-lightBg text-gray-800 font-medium px-3 py-1.5 border border-gray-200">
+                              <Star size={13} className="text-natgeo-yellow" />
+                              Highlight: {day.highlights}
                             </span>
                           )}
                           {day.meals && (
-                            <span className="inline-flex items-center gap-1.5 text-xs bg-amber/15 text-amber-dark px-3 py-1.5 font-medium">
-                              <Utensils size={12} />
-                              {day.meals}
+                            <span className="inline-flex items-center gap-1.5 bg-natgeo-lightBg text-gray-800 font-medium px-3 py-1.5 border border-gray-200">
+                              <Utensils size={13} className="text-natgeo-yellow" />
+                              Meals: {day.meals}
                             </span>
                           )}
                         </div>
                       )}
                     </div>
-                  </div>
+                  )}
                 </div>
               );
             })}
@@ -163,19 +220,30 @@ export default function PackageDetail() {
         </div>
       </section>
 
-      {/* Photo gallery */}
-      <section className="py-20 lg:py-32 bg-sand">
-        <div className="mx-auto max-w-content px-5 lg:px-12">
-          <div className="mb-12">
-            <p className="eyebrow text-terracotta mb-5">Gallery</p>
-            <h2 className="font-display text-3xl lg:text-h2 font-light text-ink">Photo gallery</h2>
+      {/* Photo Gallery Grid */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+          <div className="mb-8">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="w-2.5 h-2.5 bg-natgeo-yellow inline-block" />
+              <span className="font-natgeo font-extrabold text-xs tracking-widest text-black uppercase">
+                THROUGH THE LENS
+              </span>
+            </div>
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-black">
+              Expedition Field Gallery
+            </h2>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {pkg.gallery.map((img, i) => (
-              <div key={i} className="overflow-hidden group">
-                <div className={`aspect-square ${i === 0 ? 'lg:col-span-2 lg:row-span-2' : ''}`}>
-                  <img src={img} alt={`${pkg.name} — photo ${i + 1}`} className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                </div>
+              <div key={i} className="aspect-[4/3] overflow-hidden bg-black group">
+                <img
+                  src={img}
+                  alt={`${pkg.name} - photograph ${i + 1}`}
+                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
@@ -183,17 +251,26 @@ export default function PackageDetail() {
       </section>
 
       {/* Closing CTA */}
-      <section className="py-16 lg:py-24 bg-espresso text-cream">
-        <div className="mx-auto max-w-content px-5 lg:px-12 text-center">
-          <h2 className="font-display text-2xl lg:text-h3 font-light text-cream mb-4">Interested in this itinerary?</h2>
-          <p className="text-cream/60 text-base mb-7 max-w-xl mx-auto">Get in touch and we'll tailor it to your dates, group size, and preferences.</p>
+      <section className="py-16 bg-black text-white text-center border-t border-white/10">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6">
+          <h2 className="font-natgeo font-extrabold text-3xl uppercase tracking-wider text-white mb-3">
+            READY TO JOIN THIS EXPEDITION?
+          </h2>
+          <p className="text-white/70 text-sm sm:text-base mb-6 leading-relaxed">
+            Let our local Batswana guides tailor this itinerary to your exact travel window, group size, and wildlife sighting priorities.
+          </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <button onClick={() => setEnquiryOpen(true)} className="inline-flex items-center gap-2 bg-terracotta text-cream font-semibold px-6 py-3.5 hover:bg-terracotta-light transition-colors group">
-              Enquire now
-              <ArrowUpRight size={17} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <button
+              onClick={() => setEnquiryOpen(true)}
+              className="bg-natgeo-yellow hover:bg-natgeo-yellowHover text-black font-natgeo font-extrabold text-sm uppercase tracking-wider px-8 py-3.5 transition-colors"
+            >
+              Inquire Now
             </button>
-            <Link to="/contact" className="inline-flex items-center gap-2 border border-cream/25 text-cream font-semibold px-6 py-3.5 hover:bg-cream hover:text-espresso transition-colors">
-              Contact us
+            <Link
+              to="/contact"
+              className="border border-white/40 hover:border-white text-white font-natgeo font-extrabold text-sm uppercase tracking-wider px-8 py-3.5 hover:bg-white/10 transition-colors"
+            >
+              Contact Safari Desk
             </Link>
           </div>
         </div>

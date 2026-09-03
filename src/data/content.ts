@@ -343,10 +343,325 @@ export const planTripDurations = [
 ];
 
 export const navLinks = [
-  { label: 'Home', path: '/' },
-  { label: 'About Us', path: '/about' },
-  { label: 'What We Offer', path: '/services' },
+  { label: 'Animals & Wildlife', path: '/' },
   { label: 'Our Packages', path: '/packages' },
+  { label: 'What We Offer', path: '/services' },
+  { label: 'About Us', path: '/about' },
   { label: 'Plan Your Trip', path: '/plan-your-trip' },
-  { label: 'Contact Us', path: '/contact' },
+  { label: 'Contact', path: '/contact' },
 ];
+
+export interface SpeciesProfile {
+  id: string;
+  name: string;
+  latinName: string;
+  category: 'Big Cats' | 'Great Herbivores' | 'Avian Wonders' | 'River Titans' | 'Rare & Endangered';
+  status: 'Endangered' | 'Vulnerable' | 'Near Threatened' | 'Least Concern';
+  statusCode: 'EN' | 'VU' | 'NT' | 'LC';
+  statusColor: string;
+  speed: string;
+  weight: string;
+  lifespan: string;
+  habitat: string;
+  image: string;
+  leadFact: string;
+  description: string;
+  encounterSeason: string;
+  botswanaHotspot: string;
+  relatedPackageSlug: string;
+}
+
+export const speciesList: SpeciesProfile[] = [
+  {
+    id: 'african-elephant',
+    name: 'African Bush Elephant',
+    latinName: 'Loxodonta africana',
+    category: 'Great Herbivores',
+    status: 'Endangered',
+    statusCode: 'EN',
+    statusColor: '#EF4444',
+    speed: '40 km/h (25 mph)',
+    weight: 'Up to 6,000 kg (13,000 lbs)',
+    lifespan: '60–70 years in wild',
+    habitat: 'Okavango Delta floodplains, Chobe Riverfront, Savuti Marsh',
+    image: 'https://images.pexels.com/photos/1001437/pexels-photo-1001437.jpeg?auto=compress&cs=tinysrgb&h=800&w=1200',
+    leadFact: 'Botswana is home to over 130,000 elephants — the largest surviving population on Earth.',
+    description: 'The African bush elephant is the world’s largest living terrestrial animal. In Chobe National Park, herds gather in extraordinary numbers along the riverbanks during the dry season, creating one of nature’s most profound wildlife spectacles.',
+    encounterSeason: 'May to October (Dry Season peak gathering)',
+    botswanaHotspot: 'Chobe National Park & Savuti Marsh',
+    relatedPackageSlug: '7-day-delta-chobe',
+  },
+  {
+    id: 'african-lion',
+    name: 'African Lion',
+    latinName: 'Panthera leo',
+    category: 'Big Cats',
+    status: 'Vulnerable',
+    statusCode: 'VU',
+    statusColor: '#F59E0B',
+    speed: '80 km/h (50 mph)',
+    weight: '150–225 kg (330–500 lbs)',
+    lifespan: '10–14 years in wild',
+    habitat: 'Savuti Channel, Moremi Game Reserve, Duba Plains',
+    image: 'https://images.pexels.com/photos/16444284/pexels-photo-16444284.jpeg?auto=compress&cs=tinysrgb&h=800&w=1200',
+    leadFact: 'Savuti’s lion prides are legendary for their strength, adapted to hunting massive cape buffalos and elephants.',
+    description: 'Dominating Botswana’s predator landscape, the lions of the Okavango and Savuti live in powerful mega-prides. They are famous for swimming between delta islands and hunting in daylight across open grasslands.',
+    encounterSeason: 'Year-round (Best sightings June to October)',
+    botswanaHotspot: 'Savuti Marsh & Moremi Game Reserve',
+    relatedPackageSlug: 'okavango-delta-safari',
+  },
+  {
+    id: 'african-leopard',
+    name: 'African Leopard',
+    latinName: 'Panthera pardus pardus',
+    category: 'Big Cats',
+    status: 'Vulnerable',
+    statusCode: 'VU',
+    statusColor: '#F59E0B',
+    speed: '58 km/h (36 mph)',
+    weight: '30–70 kg (66–154 lbs)',
+    lifespan: '12–17 years',
+    habitat: 'Riverine forest, sausage trees of Moremi & Khwai',
+    image: 'https://images.pexels.com/photos/17435022/pexels-photo-17435022.jpeg?auto=compress&cs=tinysrgb&h=800&w=1200',
+    leadFact: 'Master of stealth: Moremi Game Reserve has one of the highest leopard densities in Africa.',
+    description: 'With golden coats stamped with rosette patterns, leopards are masters of camouflage. They haul prey weighing twice their own body weight high into sausage tree boughs to safeguard their meal from lions and hyenas.',
+    encounterSeason: 'Year-round (Best on night drives in Khwai Concession)',
+    botswanaHotspot: 'Khwai Concession & Moremi Wildlife Reserve',
+    relatedPackageSlug: '10-day-camping-okavango-delta',
+  },
+  {
+    id: 'african-wild-dog',
+    name: 'African Wild Dog (Painted Wolf)',
+    latinName: 'Lycaon pictus',
+    category: 'Rare & Endangered',
+    status: 'Endangered',
+    statusCode: 'EN',
+    statusColor: '#EF4444',
+    speed: '72 km/h (45 mph)',
+    weight: '20–30 kg (44–66 lbs)',
+    lifespan: '10–12 years',
+    habitat: 'Mopane woodland & open floodplains of Northern Botswana',
+    image: 'https://images.pexels.com/photos/16444281/pexels-photo-16444281.jpeg?auto=compress&cs=tinysrgb&h=800&w=1200',
+    leadFact: 'With an 80% hunting success rate, wild dogs are Africa’s most tactical pack predators.',
+    description: 'Recognizable by their tricolor marbled coats and oversized rounded ears, wild dogs are critically endangered. Botswana’s vast unfenced concession areas offer one of the final safe havens where these cooperative hunters thrive.',
+    encounterSeason: 'Denning season May to August for puppy sightings',
+    botswanaHotspot: 'Khwai Private Concession & Moremi',
+    relatedPackageSlug: '10-day-camping-okavango-delta',
+  },
+  {
+    id: 'african-fish-eagle',
+    name: 'African Fish Eagle',
+    latinName: 'Haliaeetus vocifer',
+    category: 'Avian Wonders',
+    status: 'Least Concern',
+    statusCode: 'LC',
+    statusColor: '#10B981',
+    speed: '48 km/h dive',
+    weight: '2.0–3.6 kg',
+    lifespan: '15–24 years',
+    habitat: 'Permanent water channels of Okavango & Chobe River',
+    image: 'https://images.pexels.com/photos/35722304/pexels-photo-35722304.jpeg?auto=compress&cs=tinysrgb&h=800&w=1200',
+    leadFact: 'Its piercing call is celebrated worldwide as the "Voice of Africa."',
+    description: 'Perched high in dead leadwood trees overlooking delta lagoons, this striking raptor with snow-white mantle and chest swoops down with talon-first precision to pluck large bream and catfish straight from the water.',
+    encounterSeason: 'Year-round (Outstanding from boat cruises)',
+    botswanaHotspot: 'Okavango Delta Channels & Chobe River',
+    relatedPackageSlug: 'okavango-delta-safari',
+  },
+  {
+    id: 'hippopotamus',
+    name: 'Hippopotamus',
+    latinName: 'Hippopotamus amphibius',
+    category: 'River Titans',
+    status: 'Vulnerable',
+    statusCode: 'VU',
+    statusColor: '#F59E0B',
+    speed: '30 km/h on land',
+    weight: '1,300–1,800 kg',
+    lifespan: '40–50 years',
+    habitat: 'Deep lagoons, papyrus channels, sandbanks',
+    image: 'https://images.pexels.com/photos/6995536/pexels-photo-6995536.jpeg?auto=compress&cs=tinysrgb&h=800&w=1200',
+    leadFact: 'Hippos engineer the Delta by carving pathways through reedbeds that become mokoro water channels.',
+    description: 'Submerged throughout the searing heat of the day with only nostrils, eyes, and ears visible, hippos emerge at dusk to graze on riverbank grasses, shaping the geography and flow of the Okavango waterways.',
+    encounterSeason: 'Year-round',
+    botswanaHotspot: 'Delta Lagoons & Chobe River',
+    relatedPackageSlug: '10-day-camping-okavango-delta',
+  },
+  {
+    id: 'cheetah',
+    name: 'Cheetah',
+    latinName: 'Acinonyx jubatus',
+    category: 'Big Cats',
+    status: 'Vulnerable',
+    statusCode: 'VU',
+    statusColor: '#F59E0B',
+    speed: '112 km/h (70 mph)',
+    weight: '35–65 kg',
+    lifespan: '10–12 years',
+    habitat: 'Open grasslands of Makgadikgadi Salt Pans & Nxai Pan',
+    image: 'https://images.pexels.com/photos/20523197/pexels-photo-20523197.jpeg?auto=compress&cs=tinysrgb&h=800&w=1200',
+    leadFact: 'Accelerates from 0 to 100 km/h in just 3 seconds across flat salt pans.',
+    description: 'The world’s fastest land mammal relies on panoramic visibility across Botswana’s vast salt pans and open savanna. Their slender aerodynamic frames and non-retractable claws give them unmatched sprint traction.',
+    encounterSeason: 'November to April (Kalahari & Nxai Pan rainy season)',
+    botswanaHotspot: 'Makgadikgadi & Nxai Pan National Park',
+    relatedPackageSlug: '7-day-delta-chobe',
+  },
+  {
+    id: 'nile-crocodile',
+    name: 'Nile Crocodile',
+    latinName: 'Crocodylus niloticus',
+    category: 'River Titans',
+    status: 'Least Concern',
+    statusCode: 'LC',
+    statusColor: '#10B981',
+    speed: '35 km/h in water',
+    weight: 'Up to 750 kg',
+    lifespan: '70–100 years',
+    habitat: 'Chobe River, Okavango Panhandle, Linyanti waterways',
+    image: 'https://images.pexels.com/photos/9754304/pexels-photo-9754304.jpeg?auto=compress&cs=tinysrgb&h=800&w=1200',
+    leadFact: 'Prehistoric apex predator unchanged for over 65 million years, boasting an unmatched bite force.',
+    description: 'Sunbathing on sandbanks along the Chobe River, these ancient giants can grow over 5 meters in length. They play an indispensable role in delta ecology by keeping fish populations balanced.',
+    encounterSeason: 'Dry winter months (June to September) basking under midday sun',
+    botswanaHotspot: 'Chobe River & Panhandle',
+    relatedPackageSlug: '7-day-delta-chobe',
+  },
+];
+
+export interface NatGeoStory {
+  id: string;
+  tag: string;
+  title: string;
+  desc?: string;
+  image: string;
+  link: string;
+  author?: string;
+  date?: string;
+}
+
+export const featuredGridStories: {
+  leadStory: NatGeoStory;
+  secondaryStory: NatGeoStory;
+  subCards: NatGeoStory[];
+} = {
+  leadStory: {
+    id: 'lead-elephant',
+    tag: 'SAFARI EXPEDITIONS',
+    title: 'Experience the Okavango Delta: A Safari Like No Other',
+    desc: 'Deep inside the Okavango Delta, navigate through pristine waterways and encounter diverse wildlife on an unforgettable journey.',
+    image: 'https://images.pexels.com/photos/1001437/pexels-photo-1001437.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1400',
+    link: '/packages/10-day-camping-okavango-delta',
+    author: 'Chief Field Guide',
+    date: 'Featured Package',
+  },
+  secondaryStory: {
+    id: 'sec-weapon',
+    tag: 'EXPERT ADVICE',
+    title: 'Mobile Camping vs. Fly-In Lodges: Which is Right for You?',
+    desc: 'Discover the difference between sleeping under the stars in a mobile camp and the luxury of a fly-in safari lodge.',
+    image: 'https://images.pexels.com/photos/6790638/pexels-photo-6790638.jpeg?auto=compress&cs=tinysrgb&h=800&w=1000',
+    link: '/plan-your-trip',
+    author: 'Travel Desk',
+    date: 'Planning',
+  },
+  subCards: [
+    {
+      id: 'sub-wild-dogs',
+      tag: 'DESTINATIONS',
+      title: 'Chobe National Park: The Elephant Capital of the World',
+      image: 'https://images.pexels.com/photos/16444281/pexels-photo-16444281.jpeg?auto=compress&cs=tinysrgb&h=600&w=800',
+      link: '/packages/7-day-delta-chobe',
+    },
+    {
+      id: 'sub-field-expedition',
+      tag: 'LUXURY SAFARIS',
+      title: 'Helicopter Flights and Sunset Cruises: The Belmond Experience',
+      image: 'https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&h=600&w=800',
+      link: '/packages/luxury-belmond-delta-victoria-falls',
+    },
+    {
+      id: 'sub-planner',
+      tag: 'OUR SERVICES',
+      title: 'From Tailor-Made Itineraries to Cultural Expeditions',
+      image: 'https://images.pexels.com/photos/35722304/pexels-photo-35722304.jpeg?auto=compress&cs=tinysrgb&h=600&w=800',
+      link: '/services',
+    },
+  ],
+};
+
+export const editorialStreamStories: {
+  lead: NatGeoStory;
+  stream: NatGeoStory[];
+} = {
+  lead: {
+    id: 'stream-lead',
+    tag: 'BIRD WATCHING',
+    title: 'A Birding Paradise: Discover Over 450 Species in the Okavango Delta',
+    desc: 'From the African Fish Eagle to the vibrant Lilac-breasted Roller, Botswana offers some of the most spectacular bird watching on the planet.',
+    image: 'https://images.pexels.com/photos/5267250/pexels-photo-5267250.jpeg?auto=compress&cs=tinysrgb&h=900&w=1600',
+    link: '/packages/okavango-delta-safari',
+  },
+  stream: [
+    {
+      id: 'st-1',
+      tag: 'OVERLAND TOURS',
+      title: 'Cross-Border Adventures: From Namibia to Victoria Falls',
+      image: 'https://images.pexels.com/photos/32957448/pexels-photo-32957448.jpeg?auto=compress&cs=tinysrgb&h=450&w=700',
+      link: '/packages/7-day-delta-chobe',
+    },
+    {
+      id: 'st-2',
+      tag: 'PREDATORS',
+      title: 'Tracking Africa’s Big Cats with Expert Safari Guides',
+      image: 'https://images.pexels.com/photos/16444284/pexels-photo-16444284.jpeg?auto=compress&cs=tinysrgb&h=450&w=700',
+      link: '/packages/okavango-delta-safari',
+    },
+    {
+      id: 'st-3',
+      tag: 'CULTURAL TOURS',
+      title: 'Walking with the San: Ancient Knowledge of the Kalahari',
+      image: 'https://images.pexels.com/photos/17435022/pexels-photo-17435022.jpeg?auto=compress&cs=tinysrgb&h=450&w=700',
+      link: '/packages/7-day-delta-chobe',
+    },
+    {
+      id: 'st-4',
+      tag: 'ACCOMMODATION',
+      title: 'Inside the Best Luxury Lodges and Wild Camps of Botswana',
+      image: 'https://images.pexels.com/photos/35722304/pexels-photo-35722304.jpeg?auto=compress&cs=tinysrgb&h=450&w=700',
+      link: '/services',
+    },
+    {
+      id: 'st-5',
+      tag: 'OUR PROMISE',
+      title: 'Committed to Sustainable Tourism and Wildlife Conservation',
+      image: 'https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&h=450&w=700',
+      link: '/about',
+    },
+    {
+      id: 'st-6',
+      tag: 'SAFARI LOG',
+      title: 'Mokoro Excursions: The Most Peaceful Way to See the Delta',
+      image: 'https://images.pexels.com/photos/1001437/pexels-photo-1001437.jpeg?auto=compress&cs=tinysrgb&h=450&w=700',
+      link: '/packages/10-day-camping-okavango-delta',
+    },
+    {
+      id: 'st-7',
+      tag: 'VICTORIA FALLS',
+      title: 'The Smoke That Thunders: Adding Zimbabwe to Your Itinerary',
+      image: 'https://images.pexels.com/photos/20523197/pexels-photo-20523197.jpeg?auto=compress&cs=tinysrgb&h=450&w=700',
+      link: '/packages/luxury-belmond-delta-victoria-falls',
+    },
+    {
+      id: 'st-8',
+      tag: 'TAILOR-MADE',
+      title: 'How to Build Your Custom Safari Holiday with Safari Knight',
+      image: 'https://images.pexels.com/photos/17435022/pexels-photo-17435022.jpeg?auto=compress&cs=tinysrgb&h=450&w=700',
+      link: '/plan-your-trip',
+    },
+    {
+      id: 'st-9',
+      tag: 'SAFARI TIPS',
+      title: 'What to Pack for Your First African Safari',
+      image: 'https://images.pexels.com/photos/9754304/pexels-photo-9754304.jpeg?auto=compress&cs=tinysrgb&h=450&w=700',
+      link: '/about',
+    },
+  ],
+};
