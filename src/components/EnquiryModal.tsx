@@ -14,7 +14,7 @@ export default function EnquiryModal({ open, onClose, packageName }: EnquiryModa
     name: '',
     email: '',
     phone: '',
-    message: packageName ? `I'm interested in the ${packageName} expedition. Please provide seasonal rates and availability.` : '',
+    message: packageName ? `I'm interested in the ${packageName} package. Please get in touch.` : '',
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -44,111 +44,77 @@ export default function EnquiryModal({ open, onClose, packageName }: EnquiryModa
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-xs" onClick={handleClose} />
-      <div className="relative bg-white text-black w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl border-t-4 border-natgeo-yellow">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
-          <div>
-            <span className="font-natgeo font-extrabold text-[10px] tracking-widest text-gray-400 uppercase block">
-              SAFARI DESK
-            </span>
-            <h3 className="font-display text-xl font-bold text-black">
-              {submitted ? 'Inquiry Sent' : 'Expedition Inquiry'}
-            </h3>
-          </div>
-          <button
-            onClick={handleClose}
-            className="p-1.5 -mr-1.5 text-gray-400 hover:text-black transition-colors"
-            aria-label="Close modal"
-          >
+      <div className="absolute inset-0 bg-espresso-dark/85 backdrop-blur-sm" onClick={handleClose} />
+      <div className="relative bg-cream w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl">
+        <div className="flex items-center justify-between px-6 py-5 border-b border-ink/8">
+          <h3 className="font-display text-2xl font-medium text-ink">
+            {submitted ? 'Thank you' : 'Quick enquiry'}
+          </h3>
+          <button onClick={handleClose} className="p-1.5 -mr-1.5 text-ink/40 hover:text-ink transition-colors" aria-label="Close">
             <X size={20} />
           </button>
         </div>
 
         {submitted ? (
-          <div className="px-6 py-10 text-center">
-            <CheckCircle2 size={40} className="text-black mx-auto mb-4" />
-            <p className="text-black text-xl font-display font-bold mb-2">Thank you, {form.name.split(' ')[0]}</p>
-            <p className="text-gray-600 text-xs sm:text-sm mb-6 leading-relaxed">
-              Your inquiry has been dispatched to our Botswana guides. We will reach out within 24 hours. For urgent field coordination, contact us at {SITE.phone}.
+          <div className="px-6 py-12 text-center">
+            <CheckCircle2 size={44} className="text-terracotta mx-auto mb-5" />
+            <p className="text-ink text-lg font-display font-medium mb-2">Your enquiry has been sent</p>
+            <p className="text-inkSoft text-sm mb-6 leading-relaxed">
+              We'll get back to you within 24 hours. For urgent matters, call us at {SITE.phone}.
             </p>
-            <button
-              onClick={handleClose}
-              className="bg-natgeo-yellow hover:bg-natgeo-yellowHover text-black font-natgeo font-extrabold text-xs uppercase tracking-wider px-6 py-2.5 transition-colors"
-            >
+            <button onClick={handleClose} className="bg-espresso text-cream px-6 py-2.5 text-sm font-semibold hover:bg-espresso-light transition-colors">
               Close
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="px-6 py-5 space-y-4">
-            <p className="text-xs text-gray-600">
-              Inquire about tailored dates, lodge availability, and wildlife sighting opportunities.
-            </p>
+          <form onSubmit={handleSubmit} className="px-6 py-6 space-y-4">
+            <p className="text-sm text-inkSoft mb-2">Send us a quick message and we'll get right back to you.</p>
             <div>
-              <label className="block text-xs font-natgeo font-bold uppercase tracking-wider text-gray-700 mb-1">
-                Full Name *
-              </label>
+              <label className="block text-xs font-medium text-inkSoft mb-1.5 tracking-wide">Name *</label>
               <input
                 type="text"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className={`w-full px-3.5 py-2.5 border text-sm text-black focus:outline-none focus:border-black ${
-                  errors.name ? 'border-red-500' : 'border-gray-200'
-                }`}
+                className={`w-full px-4 py-3 border bg-white text-ink text-sm focus:outline-none focus:ring-1 focus:ring-terracotta focus:border-terracotta transition-colors ${errors.name ? 'border-red-400' : 'border-ink/12'}`}
                 placeholder="Your full name"
               />
               {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
             </div>
-
             <div>
-              <label className="block text-xs font-natgeo font-bold uppercase tracking-wider text-gray-700 mb-1">
-                Email Address *
-              </label>
+              <label className="block text-xs font-medium text-inkSoft mb-1.5 tracking-wide">Email *</label>
               <input
                 type="email"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className={`w-full px-3.5 py-2.5 border text-sm text-black focus:outline-none focus:border-black ${
-                  errors.email ? 'border-red-500' : 'border-gray-200'
-                }`}
-                placeholder="you@domain.com"
+                className={`w-full px-4 py-3 border bg-white text-ink text-sm focus:outline-none focus:ring-1 focus:ring-terracotta focus:border-terracotta transition-colors ${errors.email ? 'border-red-400' : 'border-ink/12'}`}
+                placeholder="you@example.com"
               />
               {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
             </div>
-
             <div>
-              <label className="block text-xs font-natgeo font-bold uppercase tracking-wider text-gray-700 mb-1">
-                Phone Number *
-              </label>
+              <label className="block text-xs font-medium text-inkSoft mb-1.5 tracking-wide">Phone *</label>
               <input
                 type="tel"
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                className={`w-full px-3.5 py-2.5 border text-sm text-black focus:outline-none focus:border-black ${
-                  errors.phone ? 'border-red-500' : 'border-gray-200'
-                }`}
+                className={`w-full px-4 py-3 border bg-white text-ink text-sm focus:outline-none focus:ring-1 focus:ring-terracotta focus:border-terracotta transition-colors ${errors.phone ? 'border-red-400' : 'border-ink/12'}`}
                 placeholder="+267 ..."
               />
               {errors.phone && <p className="text-xs text-red-500 mt-1">{errors.phone}</p>}
             </div>
-
             <div>
-              <label className="block text-xs font-natgeo font-bold uppercase tracking-wider text-gray-700 mb-1">
-                Message / Details
-              </label>
+              <label className="block text-xs font-medium text-inkSoft mb-1.5 tracking-wide">Message</label>
               <textarea
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 rows={3}
-                className="w-full px-3.5 py-2.5 border border-gray-200 text-sm text-black focus:outline-none focus:border-black resize-none"
+                className="w-full px-4 py-3 border border-ink/12 bg-white text-ink text-sm focus:outline-none focus:ring-1 focus:ring-terracotta focus:border-terracotta transition-colors resize-none"
+                placeholder="Tell us what you're looking for..."
               />
             </div>
-
-            <button
-              type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 bg-natgeo-yellow hover:bg-natgeo-yellowHover text-black font-natgeo font-extrabold text-xs uppercase tracking-wider py-3 transition-colors shadow-xs mt-2"
-            >
-              <Send size={14} />
-              Submit Expedition Inquiry
+            <button type="submit" className="w-full flex items-center justify-center gap-2 bg-terracotta text-cream font-semibold py-3.5 hover:bg-terracotta-light transition-colors">
+              <Send size={16} />
+              Send enquiry
             </button>
           </form>
         )}

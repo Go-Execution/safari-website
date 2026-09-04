@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Clock, ArrowRight, Compass } from 'lucide-react';
+import { ArrowUpRight, Clock } from 'lucide-react';
 import type { Package } from '@/data/content';
 
 interface PackageCardProps {
@@ -11,69 +11,40 @@ export default function PackageCard({ pkg, compact }: PackageCardProps) {
   return (
     <Link
       to={`/packages/${pkg.slug}`}
-      className="group flex flex-col bg-white border border-gray-200 hover:border-natgeo-yellow transition-all duration-300 shadow-sm hover:shadow-md overflow-hidden"
+      className="group flex flex-col bg-cream overflow-hidden border border-ink/8 hover:border-terracotta/30 transition-all duration-400"
     >
-      {/* Card Image */}
-      <div className="relative aspect-[16/10] overflow-hidden bg-black">
+      <div className="relative overflow-hidden" style={{ aspectRatio: '4 / 3' }}>
         <img
           src={pkg.heroImage}
           alt={pkg.name}
           className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
-        
-        {/* Category Tag on Image */}
-        <div className="absolute top-3 left-3 bg-black/85 border-l-2 border-natgeo-yellow text-white text-[11px] font-natgeo font-bold px-2.5 py-1 tracking-wider uppercase">
+        <div className="absolute inset-0 bg-gradient-to-t from-espresso/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+        <span className="absolute top-3 left-3 bg-cream/95 text-espresso text-xs font-semibold px-3 py-1.5 tracking-wide">
           {pkg.category}
-        </div>
+        </span>
       </div>
-
-      {/* Card Details */}
       <div className="flex flex-col flex-1 p-5">
-        {/* Yellow NatGeo square tag */}
-        <div className="flex items-center gap-1.5 text-xs font-natgeo font-bold uppercase tracking-wider text-black mb-1.5">
-          <span className="w-2 h-2 bg-natgeo-yellow inline-block" />
-          <span>EXPEDITION DOSSIER</span>
-        </div>
-
-        {/* Headline */}
-        <h3 className="font-display text-xl sm:text-2xl font-bold text-black group-hover:text-natgeo-yellowHover transition-colors leading-snug mb-2.5">
+        <h3 className="font-display text-xl font-medium text-ink mb-2 leading-snug group-hover:text-terracotta transition-colors">
           {pkg.name}
         </h3>
-
-        {/* Key expedition stats */}
-        <div className="flex items-center gap-4 text-xs font-medium text-gray-500 mb-3">
-          <span className="flex items-center gap-1">
-            <Clock size={13} className="text-natgeo-yellow" />
-            <span className="text-gray-900 font-semibold">{pkg.duration}</span>
-          </span>
-          <span className="flex items-center gap-1">
-            <Compass size={13} className="text-natgeo-yellow" />
-            <span>Botswana Wilderness</span>
+        <div className="flex items-center gap-4 text-sm text-inkSoft mb-3">
+          <span className="flex items-center gap-1.5">
+            <Clock size={14} className="text-terracotta" />
+            {pkg.duration}
           </span>
         </div>
-
         {!compact && (
-          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-2 mb-4 font-normal">
-            {pkg.overview}
-          </p>
+          <p className="text-sm text-inkSoft leading-relaxed mb-4 line-clamp-2">{pkg.overview}</p>
         )}
-
-        {/* Footer */}
-        <div className="mt-auto pt-3 border-t border-gray-100 flex items-center justify-between">
-          <div>
-            <span className="text-[10px] font-natgeo uppercase tracking-widest text-gray-400 block">
-              Pricing
-            </span>
-            <span className="text-xs font-bold text-black">
-              {pkg.price === 'Price on request' ? 'On Request' : pkg.price.split(' per')[0]}
-            </span>
-          </div>
-
-          <span className="inline-flex items-center gap-1 text-xs font-natgeo font-bold uppercase tracking-wider text-black group-hover:text-natgeo-yellowHover transition-colors">
-            Read Dossier
-            <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+        <div className="mt-auto flex items-center justify-between pt-3 border-t border-ink/6">
+          <span className="text-sm font-medium text-terracotta">
+            {pkg.price === 'Price on request' ? 'On request' : pkg.price.split(' per')[0]}
+          </span>
+          <span className="flex items-center gap-1 text-sm font-semibold text-espresso group-hover:text-terracotta transition-colors">
+            View
+            <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </span>
         </div>
       </div>

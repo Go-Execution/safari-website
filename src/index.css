@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,14 +10,17 @@
   }
   body {
     font-family: 'DM Sans', sans-serif;
-    background-color: #FFFFFF;
-    color: #121212;
+    background-color: #F2EBE0;
+    color: #1A1310;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant', serif;
+  }
   ::selection {
-    background-color: #FFCC00;
-    color: #000000;
+    background-color: #C25B3E;
+    color: #FAF6EF;
   }
 }
 
@@ -32,35 +35,12 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  
-  /* National Geographic Iconic Elements */
-  .natgeo-tag {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
+  .eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    font-size: 0.8125rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-  
-  .natgeo-tag-square::before {
-    content: '';
-    display: inline-block;
-    width: 0.5rem;
-    height: 0.5rem;
-    background-color: #FFCC00;
-    margin-right: 0.35rem;
-    flex-shrink: 0;
-  }
-
-  .natgeo-yellow-bar {
-    border-left: 5px solid #FFCC00;
-  }
-
-  .natgeo-yellow-frame {
-    outline: 4px solid #FFCC00;
   }
 }
 
