@@ -15,25 +15,25 @@ import {
 import { packages, services, pillars, testimonials, SITE } from '@/data/content';
 import PackageCard from '@/components/PackageCard';
 
-const heroImage = 'https://images.pexels.com/photos/6995536/pexels-photo-6995536.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1920';
-const aboutImage = 'https://images.pexels.com/photos/16444284/pexels-photo-16444284.jpeg?auto=compress&cs=tinysrgb&h=900&w=1200';
-const ctaImage = 'https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&h=900&w=1920';
+const heroImage = '/assets/images/placeholders/placeholder-7.jpg';
+const aboutImage = '/assets/images/placeholders/placeholder-8.jpg';
+const ctaImage = '/assets/images/placeholders/placeholder-1.jpg';
 
 const quickLinks = [
-  { title: 'About Us', desc: 'Meet the team', path: '/about', image: 'https://images.pexels.com/photos/16444281/pexels-photo-16444281.jpeg?auto=compress&cs=tinysrgb&h=500&w=700' },
-  { title: 'What We Offer', desc: 'Tailor-made safaris', path: '/services', image: 'https://images.pexels.com/photos/5267250/pexels-photo-5267250.jpeg?auto=compress&cs=tinysrgb&h=500&w=700' },
-  { title: 'Our Packages', desc: 'Four journeys', path: '/packages', image: 'https://images.pexels.com/photos/35722304/pexels-photo-35722304.jpeg?auto=compress&cs=tinysrgb&h=500&w=700' },
-  { title: 'Plan Your Trip', desc: 'Build your itinerary', path: '/plan-your-trip', image: 'https://images.pexels.com/photos/32957448/pexels-photo-32957448.jpeg?auto=compress&cs=tinysrgb&h=500&w=700' },
+  { title: 'About Us', desc: 'Meet the team', path: '/about', image: '/assets/images/placeholders/placeholder-2.jpg' },
+  { title: 'What We Offer', desc: 'Tailor-made safaris', path: '/services', image: '/assets/images/placeholders/placeholder-3.jpg' },
+  { title: 'Our Packages', desc: 'Four journeys', path: '/packages', image: '/assets/images/placeholders/placeholder-4.jpg' },
+  { title: 'Plan Your Trip', desc: 'Build your itinerary', path: '/plan-your-trip', image: '/assets/images/placeholders/placeholder-5.jpg' },
 ];
 
 const serviceIcons: Record<string, typeof BedDouble> = { BedDouble, Users, Binoculars, Compass };
 
 const pillarImages = [
-  'https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
-  'https://images.pexels.com/photos/6995536/pexels-photo-6995536.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
-  'https://images.pexels.com/photos/17435022/pexels-photo-17435022.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
-  'https://images.pexels.com/photos/16444281/pexels-photo-16444281.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
-  'https://images.pexels.com/photos/20523197/pexels-photo-20523197.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
+  '/assets/images/placeholders/placeholder-2.jpg',
+  '/assets/images/placeholders/placeholder-3.jpg',
+  '/assets/images/placeholders/placeholder-4.jpg',
+  '/assets/images/placeholders/placeholder-6.jpg',
+  '/assets/images/placeholders/placeholder-6.jpg',
 ];
 
 export default function Home() {

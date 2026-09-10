@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Quote } from 'lucide-react';
 import { pillars, testimonials } from '@/data/content';
 
-const heroImage = 'https://images.pexels.com/photos/16444281/pexels-photo-16444281.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1800';
+const heroImage = '/assets/images/placeholders/placeholder-1.jpg';
 
 const pillarImages = [
-  'https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
-  'https://images.pexels.com/photos/6995536/pexels-photo-6995536.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
-  'https://images.pexels.com/photos/17435022/pexels-photo-17435022.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
-  'https://images.pexels.com/photos/16444284/pexels-photo-16444284.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
-  'https://images.pexels.com/photos/20523197/pexels-photo-20523197.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
+  '/assets/images/placeholders/placeholder-2.jpg',
+  '/assets/images/placeholders/placeholder-3.jpg',
+  '/assets/images/placeholders/placeholder-4.jpg',
+  '/assets/images/placeholders/placeholder-5.jpg',
+  '/assets/images/placeholders/placeholder-6.jpg',
 ];
 
 const differences = [
