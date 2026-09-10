@@ -2,15 +2,6 @@ import { Link } from 'react-router-dom';
 import { BedDouble, Users, Binoculars, Compass, ArrowRight } from 'lucide-react';
 import { services } from '@/data/content';
 
-<<<<<<< Updated upstream
-const heroImage = 'https://images.pexels.com/photos/5267250/pexels-photo-5267250.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1800';
-
-const serviceImages = [
-  'https://images.pexels.com/photos/1001437/pexels-photo-1001437.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
-  'https://images.pexels.com/photos/16444281/pexels-photo-16444281.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
-  'https://images.pexels.com/photos/6790638/pexels-photo-6790638.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
-  'https://images.pexels.com/photos/9754304/pexels-photo-9754304.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
-=======
 const heroImage = '/assets/images/placeholders/placeholder-1.jpg';
 
 const serviceImages = [
@@ -18,7 +9,6 @@ const serviceImages = [
   '/assets/images/placeholders/placeholder-3.jpg',
   '/assets/images/placeholders/placeholder-4.jpg',
   '/assets/images/placeholders/placeholder-5.jpg',
->>>>>>> Stashed changes
 ];
 
 const serviceIcons: Record<string, typeof BedDouble> = { BedDouble, Users, Binoculars, Compass };

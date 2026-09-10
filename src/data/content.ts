@@ -4,13 +4,8 @@ export const SITE = {
   phoneHref: 'tel:+26772619757',
   email: 'info@safariknight.co.bw',
   address: 'Regus, Gaborone The Hub, iTowers Ground & First Floor, CBD, Gaborone, Botswana',
-<<<<<<< Updated upstream
-  logo: 'https://www.safariknight.co.bw/assets/images/logo/safarilogo-01.png',
-  baseUrl: 'https://www.safariknight.co.bw/assets/images/',
-=======
   logo: '/assets/images/placeholders/placeholder-1.jpg',
   baseUrl: 'https://images.pexels.com/',
->>>>>>> Stashed changes
 };
 
 export interface ItineraryDay {
@@ -48,21 +43,12 @@ export const packages: Package[] = [
     duration: '10 Days',
     price: 'Price on request',
     priceNote: 'Contact us for a seasonal quote',
-<<<<<<< Updated upstream
-    heroImage: 'https://www.safariknight.co.bw/assets/images/packages/p1.jpg',
-    gallery: [
-      'https://www.safariknight.co.bw/assets/images/packages/p1.jpg',
-      'https://www.safariknight.co.bw/assets/images/packages/p2.jpg',
-      'https://www.safariknight.co.bw/assets/images/packages/p3.jpg',
-      'https://www.safariknight.co.bw/assets/images/packages/p4.jpg',
-=======
     heroImage: '/assets/images/placeholders/placeholder-2.jpg',
     gallery: [
       '/assets/images/placeholders/placeholder-3.jpg',
       '/assets/images/placeholders/placeholder-4.jpg',
       '/assets/images/placeholders/placeholder-5.jpg',
       'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80',
->>>>>>> Stashed changes
     ],
     accommodation: 'Budget camping, inside the Okavango Delta',
     meals: 'Lunch & dinner included (breakfast not included). All drinks included — premium wines & liquors may be excluded.',
@@ -114,21 +100,12 @@ export const packages: Package[] = [
     duration: '5 Days / 4 Nights',
     price: 'From USD 3,077 to USD 4,000 per person sharing',
     priceNote: 'Indicative price — final cost depends on season and customisation. This is an example itinerary and can be customised on request.',
-<<<<<<< Updated upstream
-    heroImage: 'https://www.safariknight.co.bw/assets/images/packages/p5.jpg',
-    gallery: [
-      'https://www.safariknight.co.bw/assets/images/packages/p5.jpg',
-      'https://www.safariknight.co.bw/assets/images/packages/p6.jpg',
-      'https://www.safariknight.co.bw/assets/images/packages/p7.jpg',
-      'https://www.safariknight.co.bw/assets/images/packages/p8.jpg',
-=======
     heroImage: '/assets/images/placeholders/placeholder-7.jpg',
     gallery: [
       '/assets/images/placeholders/placeholder-8.jpg',
       '/assets/images/placeholders/placeholder-1.jpg',
       '/assets/images/placeholders/placeholder-2.jpg',
       '/assets/images/placeholders/placeholder-3.jpg',
->>>>>>> Stashed changes
     ],
     accommodation: '2 nights at Oddballs\' Enclave (classic Meru tents) & 2 nights at Camp Savuti (5 Meru tents)',
     meals: 'All meals included as per lodge package.',
@@ -166,21 +143,12 @@ export const packages: Package[] = [
     duration: '7 Days / 6 Nights',
     price: 'Price on request',
     priceNote: 'Prices subject to change seasonally. Contact us for a tailored quote.',
-<<<<<<< Updated upstream
-    heroImage: 'https://www.safariknight.co.bw/assets/images/packages/p10.jpg',
-    gallery: [
-      'https://www.safariknight.co.bw/assets/images/packages/p10.jpg',
-      'https://www.safariknight.co.bw/assets/images/packages/p11.jpg',
-      'https://www.safariknight.co.bw/assets/images/packages/p12.jpg',
-      'https://www.safariknight.co.bw/assets/images/packages/p13.jpg',
-=======
     heroImage: '/assets/images/placeholders/placeholder-4.jpg',
     gallery: [
       '/assets/images/placeholders/placeholder-5.jpg',
       'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80',
       '/assets/images/placeholders/placeholder-7.jpg',
       '/assets/images/placeholders/placeholder-8.jpg',
->>>>>>> Stashed changes
     ],
     accommodation: 'Belmond Eagle Island Camp (2 nights), Belmond Khwai River Lodge (2 nights), The Victoria Falls Hotel (2 nights)',
     meals: 'All meals included as per lodge package.',
@@ -224,21 +192,12 @@ export const packages: Package[] = [
     duration: '7 Days',
     price: 'Price on request',
     priceNote: 'Contact us for a seasonal quote. Cross-border route: starts in Windhoek, Namibia, ends in Victoria Falls, Zimbabwe.',
-<<<<<<< Updated upstream
-    heroImage: 'https://www.safariknight.co.bw/assets/images/packages/p10.jpg',
-    gallery: [
-      'https://www.safariknight.co.bw/assets/images/packages/p10.jpg',
-      'https://www.safariknight.co.bw/assets/images/packages/p14.jpg',
-      'https://www.safariknight.co.bw/assets/images/packages/p16.jpg',
-      'https://www.safariknight.co.bw/assets/images/packages/p13.jpg',
-=======
     heroImage: '/assets/images/placeholders/placeholder-1.jpg',
     gallery: [
       '/assets/images/placeholders/placeholder-2.jpg',
       '/assets/images/placeholders/placeholder-3.jpg',
       '/assets/images/placeholders/placeholder-4.jpg',
       '/assets/images/placeholders/placeholder-5.jpg',
->>>>>>> Stashed changes
     ],
     accommodation: 'Lodge accommodation in twin rooms with en-suite bathrooms',
     meals: 'Most meals included (Breakfast, Lunch & Dinner on most days)',
@@ -356,30 +315,12 @@ export const testimonials = [
   {
     name: 'Ogone Kabalano',
     quote: 'From the mokoro rides to the sunset on the Chobe River, this was the trip of a lifetime. The guides\' knowledge of the bush is extraordinary.',
-<<<<<<< Updated upstream
-    photo: 'https://www.safariknight.co.bw/assets/images/testimonial/02_testimonial.jpg',
-=======
     photo: '/assets/images/placeholders/placeholder-7.jpg',
->>>>>>> Stashed changes
     sample: true,
   },
 ];
 
 export const planTripDestinations = [
-<<<<<<< Updated upstream
-  { id: 'unsure', label: 'Not sure — recommend a package for me', image: 'https://www.safariknight.co.bw/assets/images/products/elements/plan/okavango.jpg' },
-  { id: '10-day-camping', label: '10 Day Camping In Okavango Delta', image: 'https://www.safariknight.co.bw/assets/images/products/elements/plan/okavango.jpg' },
-  { id: 'okavango-safari', label: 'Okavango Delta Safari', image: 'https://www.safariknight.co.bw/assets/images/products/elements/plan/makgadikgadi.jpg' },
-  { id: 'luxury-belmond', label: 'Luxury Belmond, Delta & Victoria Falls', image: 'https://www.safariknight.co.bw/assets/images/products/elements/plan/chobe.jpg' },
-  { id: '7-day-delta-chobe', label: '7 Day Delta & Chobe', image: 'https://www.safariknight.co.bw/assets/images/products/elements/plan/kgalagadi.jpg' },
-];
-
-export const planTripGroupSizes = [
-  { id: 'solo', label: 'Solo', image: 'https://www.safariknight.co.bw/assets/images/products/elements/solo.jpg' },
-  { id: 'couple', label: 'Couple', image: 'https://www.safariknight.co.bw/assets/images/products/elements/couple.jpg' },
-  { id: 'small-group', label: 'Small Group (3–4)', image: 'https://www.safariknight.co.bw/assets/images/products/elements/smallg.jpg' },
-  { id: 'big-group', label: 'Big Group (5+)', image: 'https://www.safariknight.co.bw/assets/images/products/elements/bigg.jpg' },
-=======
   { id: 'unsure', label: 'Not sure — recommend a package for me', image: '/assets/images/placeholders/placeholder-8.jpg' },
   { id: '10-day-camping', label: '10 Day Camping In Okavango Delta', image: '/assets/images/placeholders/placeholder-1.jpg' },
   { id: 'okavango-safari', label: 'Okavango Delta Safari', image: '/assets/images/placeholders/placeholder-2.jpg' },
@@ -392,7 +333,6 @@ export const planTripGroupSizes = [
   { id: 'couple', label: 'Couple', image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80' },
   { id: 'small-group', label: 'Small Group (3–4)', image: '/assets/images/placeholders/placeholder-7.jpg' },
   { id: 'big-group', label: 'Big Group (5+)', image: '/assets/images/placeholders/placeholder-8.jpg' },
->>>>>>> Stashed changes
 ];
 
 export const planTripDurations = [
@@ -410,8 +350,6 @@ export const navLinks = [
   { label: 'Plan Your Trip', path: '/plan-your-trip' },
   { label: 'Contact Us', path: '/contact' },
 ];
-<<<<<<< Updated upstream
-=======
 
 export interface SpeciesProfile {
   id: string;
@@ -727,4 +665,3 @@ export const editorialStreamStories: {
     },
   ],
 };
->>>>>>> Stashed changes
