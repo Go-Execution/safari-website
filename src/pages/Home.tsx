@@ -15,9 +15,26 @@ import {
 import { packages, services, pillars, testimonials, SITE } from '@/data/content';
 import PackageCard from '@/components/PackageCard';
 
-// High-resolution wildlife photography matching the reference screenshot
-const heroBannerImage = 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80';
-const panoramicCtaImage = '/assets/images/placeholders/placeholder-7.jpg';
+const heroImage = 'https://images.pexels.com/photos/6995536/pexels-photo-6995536.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1920';
+const aboutImage = 'https://images.pexels.com/photos/16444284/pexels-photo-16444284.jpeg?auto=compress&cs=tinysrgb&h=900&w=1200';
+const ctaImage = 'https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&h=900&w=1920';
+
+const quickLinks = [
+  { title: 'About Us', desc: 'Meet the team', path: '/about', image: 'https://images.pexels.com/photos/16444281/pexels-photo-16444281.jpeg?auto=compress&cs=tinysrgb&h=500&w=700' },
+  { title: 'What We Offer', desc: 'Tailor-made safaris', path: '/services', image: 'https://images.pexels.com/photos/5267250/pexels-photo-5267250.jpeg?auto=compress&cs=tinysrgb&h=500&w=700' },
+  { title: 'Our Packages', desc: 'Four journeys', path: '/packages', image: 'https://images.pexels.com/photos/35722304/pexels-photo-35722304.jpeg?auto=compress&cs=tinysrgb&h=500&w=700' },
+  { title: 'Plan Your Trip', desc: 'Build your itinerary', path: '/plan-your-trip', image: 'https://images.pexels.com/photos/32957448/pexels-photo-32957448.jpeg?auto=compress&cs=tinysrgb&h=500&w=700' },
+];
+
+const serviceIcons: Record<string, typeof BedDouble> = { BedDouble, Users, Binoculars, Compass };
+
+const pillarImages = [
+  'https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
+  'https://images.pexels.com/photos/6995536/pexels-photo-6995536.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
+  'https://images.pexels.com/photos/17435022/pexels-photo-17435022.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
+  'https://images.pexels.com/photos/16444281/pexels-photo-16444281.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
+  'https://images.pexels.com/photos/20523197/pexels-photo-20523197.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
+];
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
