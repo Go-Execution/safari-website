@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Quote } from 'lucide-react';
 import { pillars, testimonials } from '@/data/content';
 
+<<<<<<< Updated upstream
 const heroImage = 'https://images.pexels.com/photos/16444281/pexels-photo-16444281.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1800';
 
 const pillarImages = [
@@ -18,6 +19,16 @@ const differences = [
   'A well-maintained 4x4 fleet, so breakdowns are rare.',
   'Fair, ethical treatment of our own guides and staff.',
   'Deep local knowledge, with plans to expand safaris across Southern Africa.',
+=======
+const heroImage = '/assets/images/placeholders/placeholder-8.jpg';
+
+const pillarImages = [
+  '/assets/images/placeholders/placeholder-1.jpg',
+  '/assets/images/placeholders/placeholder-2.jpg',
+  '/assets/images/placeholders/placeholder-3.jpg',
+  '/assets/images/placeholders/placeholder-4.jpg',
+  '/assets/images/placeholders/placeholder-5.jpg',
+>>>>>>> Stashed changes
 ];
 
 export default function About() {

@@ -15,6 +15,7 @@ import {
 import { packages, services, pillars, testimonials, SITE } from '@/data/content';
 import PackageCard from '@/components/PackageCard';
 
+<<<<<<< Updated upstream
 const heroImage = 'https://images.pexels.com/photos/6995536/pexels-photo-6995536.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1920';
 const aboutImage = 'https://images.pexels.com/photos/16444284/pexels-photo-16444284.jpeg?auto=compress&cs=tinysrgb&h=900&w=1200';
 const ctaImage = 'https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&h=900&w=1920';
@@ -35,6 +36,11 @@ const pillarImages = [
   'https://images.pexels.com/photos/16444281/pexels-photo-16444281.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
   'https://images.pexels.com/photos/20523197/pexels-photo-20523197.jpeg?auto=compress&cs=tinysrgb&h=800&w=1100',
 ];
+=======
+// High-resolution wildlife photography matching the reference screenshot
+const heroBannerImage = 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80';
+const panoramicCtaImage = '/assets/images/placeholders/placeholder-7.jpg';
+>>>>>>> Stashed changes
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);

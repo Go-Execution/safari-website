@@ -3,7 +3,11 @@ import { ArrowRight } from 'lucide-react';
 import { packages } from '@/data/content';
 import PackageCard from '@/components/PackageCard';
 
+<<<<<<< Updated upstream
 const heroImage = 'https://images.pexels.com/photos/35722304/pexels-photo-35722304.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1800';
+=======
+const heroImage = '/assets/images/placeholders/placeholder-8.jpg';
+>>>>>>> Stashed changes
 
 export default function Packages() {
   return (
