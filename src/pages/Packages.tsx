@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { packages } from '@/data/content';
 import PackageCard from '@/components/PackageCard';
 
-const heroImage = '/assets/images/placeholders/placeholder-7.jpg';
+const heroImage = 'https://images.pexels.com/photos/35722304/pexels-photo-35722304.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1800';
 
 export default function Packages() {
   return (
@@ -35,13 +35,13 @@ export default function Packages() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 lg:py-20 bg-cream border-t border-ink/8">
+      <section className="py-16 lg:py-24 bg-white border-t border-neutral-200">
         <div className="mx-auto max-w-content px-5 lg:px-12 text-center">
           <h2 className="font-display text-2xl lg:text-h3 font-light text-ink mb-4">Can't decide which one is right for you?</h2>
           <p className="text-inkSoft text-base mb-6 max-w-xl mx-auto">Use our trip planner and we'll recommend the perfect package based on your preferences.</p>
-          <Link to="/plan-your-trip" className="inline-flex items-center gap-2 bg-terracotta text-cream font-semibold px-7 py-4 hover:bg-terracotta-light transition-colors group">
+          <Link to="/plan-your-trip" className="inline-flex items-center gap-2 bg-amber text-black font-bold uppercase tracking-wider text-xs px-8 py-4 hover:bg-amber-light transition-all duration-200 shadow-md group">
             Plan Your Trip
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </section>

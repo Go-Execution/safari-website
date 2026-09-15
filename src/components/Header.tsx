@@ -55,9 +55,9 @@ export default function Header() {
         <div className="mx-auto max-w-content px-5 lg:px-12">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 shrink-0" onClick={handleNavClick}>
-              <img src={SITE.logo} alt="Safari Knight Tours logo" className="h-9 lg:h-11 w-auto object-contain brightness-0 invert" />
-              <span className="font-display text-lg lg:text-xl font-medium leading-none text-cream hidden sm:block">
+            <Link to="/" className="flex items-center gap-3 shrink-0 group" onClick={handleNavClick}>
+              <img src={SITE.logo} alt="Safari Knight Tours logo" className="h-10 lg:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+              <span className="font-display text-lg lg:text-xl font-medium leading-none text-cream hidden sm:block tracking-tight">
                 Safari Knight
               </span>
             </Link>
@@ -82,7 +82,7 @@ export default function Header() {
             <div className="flex items-center gap-3">
               <Link
                 to="/plan-your-trip"
-                className="hidden sm:inline-flex items-center gap-1.5 bg-terracotta text-cream px-5 py-2.5 text-sm font-semibold tracking-wide hover:bg-terracotta-light transition-colors group"
+                className="hidden sm:inline-flex items-center gap-1.5 bg-amber text-black font-bold uppercase tracking-wider text-xs px-5 py-2.5 hover:bg-amber-light transition-all duration-200 group shadow-sm"
               >
                 Plan Your Trip
                 <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -105,7 +105,10 @@ export default function Header() {
           <div className="absolute inset-0 bg-espresso-dark/98 backdrop-blur-md" onClick={() => setMenuOpen(false)} />
           <div className="relative h-full flex flex-col">
             <div className="flex items-center justify-between px-5 h-16 border-b border-espresso-light/20">
-              <img src={SITE.logo} alt="Safari Knight Tours" className="h-8 w-auto brightness-0 invert" />
+              <div className="flex items-center gap-2.5">
+                <img src={SITE.logo} alt="Safari Knight Tours" className="h-9 w-auto object-contain" />
+                <span className="font-display text-lg font-medium text-cream">Safari Knight</span>
+              </div>
               <button onClick={() => setMenuOpen(false)} className="p-2 -mr-2 text-cream" aria-label="Close menu">
                 <X size={26} />
               </button>
@@ -131,7 +134,7 @@ export default function Header() {
                 <Mail size={16} className="text-amber" />
                 {SITE.email}
               </a>
-              <Link to="/plan-your-trip" onClick={handleNavClick} className="block w-full text-center bg-terracotta text-cream font-semibold py-3.5 mt-4">
+              <Link to="/plan-your-trip" onClick={handleNavClick} className="block w-full text-center bg-amber text-black font-bold uppercase tracking-wider text-xs py-3.5 mt-4 hover:bg-amber-light transition-colors">
                 Plan Your Trip
               </Link>
             </div>

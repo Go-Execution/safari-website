@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 import { BedDouble, Users, Binoculars, Compass, ArrowRight } from 'lucide-react';
 import { services } from '@/data/content';
 
-const heroImage = '/assets/images/placeholders/placeholder-8.jpg';
+const heroImage = 'https://images.unsplash.com/photo-1551009175-8a68da93d5f9?auto=format&fit=crop&w=1920&q=80';
 
 const serviceImages = [
-  '/assets/images/placeholders/placeholder-1.jpg',
-  '/assets/images/placeholders/placeholder-2.jpg',
-  '/assets/images/placeholders/placeholder-3.jpg',
-  '/assets/images/placeholders/placeholder-4.jpg',
+  'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80',
+  'https://images.pexels.com/photos/16444281/pexels-photo-16444281.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1800',
+  'https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=1200&q=80',
+  'https://images.pexels.com/photos/32957448/pexels-photo-32957448.jpeg?auto=compress&cs=tinysrgb&h=500&w=700',
 ];
 
 const serviceIcons: Record<string, typeof BedDouble> = { BedDouble, Users, Binoculars, Compass };
@@ -53,8 +53,8 @@ export default function Services() {
                 </div>
                 <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
                   <div className="flex items-center gap-4 mb-5">
-                    <span className="font-display text-5xl font-light text-terracotta/25">{String(i + 1).padStart(2, '0')}</span>
-                    <div className="w-10 h-10 flex items-center justify-center bg-espresso/8 text-espresso">
+                    <span className="font-display text-5xl font-bold text-amber/40">{String(i + 1).padStart(2, '0')}</span>
+                    <div className="w-10 h-10 flex items-center justify-center bg-black text-amber border border-amber/20">
                       <Icon size={20} />
                     </div>
                   </div>
@@ -68,12 +68,12 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 lg:py-20 bg-espresso text-cream">
+      <section className="py-16 lg:py-24 bg-black text-cream border-t border-white/10">
         <div className="mx-auto max-w-content px-5 lg:px-12 text-center">
-          <h2 className="font-display text-2xl lg:text-h3 font-light text-cream mb-5">See how these come together in our packages</h2>
-          <Link to="/packages" className="inline-flex items-center gap-2 bg-terracotta text-cream font-semibold px-7 py-4 hover:bg-terracotta-light transition-colors group">
+          <h2 className="font-display text-2xl lg:text-h3 font-light text-cream mb-6">See how these come together in our packages</h2>
+          <Link to="/packages" className="inline-flex items-center gap-2 bg-amber text-black font-bold uppercase tracking-wider text-xs px-8 py-4 hover:bg-amber-light transition-all duration-200 shadow-md group">
             View Packages
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </section>

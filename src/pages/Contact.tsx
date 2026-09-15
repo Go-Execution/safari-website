@@ -26,11 +26,14 @@ export default function Contact() {
   return (
     <div className="bg-sand">
       {/* Page hero */}
-      <section className="bg-espresso text-cream py-14 lg:py-20">
+      <section className="bg-black text-cream py-14 lg:py-20 border-b border-white/10">
         <div className="mx-auto max-w-content px-5 lg:px-12">
-          <p className="eyebrow text-amber mb-4 animate-fade-up">Get in touch</p>
+          <p className="eyebrow text-amber mb-4 tracking-widest text-xs font-bold animate-fade-up flex items-center gap-2">
+            <span className="w-2 h-2 bg-amber inline-block" />
+            Get in touch
+          </p>
           <h1 className="font-display text-3xl lg:text-h1 font-light text-cream animate-fade-up">Contact Us</h1>
-          <p className="text-cream/55 text-base lg:text-lg mt-3 max-w-xl">We'd love to hear from you — reach out any time and we'll get back to you within 24 hours.</p>
+          <p className="text-cream/65 text-base lg:text-lg mt-3 max-w-xl">We'd love to hear from you — reach out any time and we'll get back to you within 24 hours.</p>
         </div>
       </section>
 
@@ -41,30 +44,30 @@ export default function Contact() {
             <h2 className="font-display text-2xl lg:text-h3 font-light text-ink mb-8">Get in touch</h2>
             <div className="space-y-6 mb-10">
               <div className="flex items-start gap-4">
-                <div className="w-11 h-11 flex items-center justify-center bg-espresso/8 shrink-0">
-                  <MapPin size={20} className="text-espresso" />
+                <div className="w-11 h-11 flex items-center justify-center bg-black text-amber border border-amber/20 shrink-0">
+                  <MapPin size={18} />
                 </div>
                 <div>
-                  <h3 className="eyebrow text-inkSoft mb-1">Address</h3>
+                  <h3 className="eyebrow text-amber mb-1 font-bold text-xs">Address</h3>
                   <p className="text-inkSoft text-sm leading-relaxed">{SITE.address}</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-11 h-11 flex items-center justify-center bg-espresso/8 shrink-0">
-                  <Phone size={20} className="text-espresso" />
+                <div className="w-11 h-11 flex items-center justify-center bg-black text-amber border border-amber/20 shrink-0">
+                  <Phone size={18} />
                 </div>
                 <div>
-                  <h3 className="eyebrow text-inkSoft mb-1">Phone</h3>
-                  <a href={`tel:${SITE.phoneHref}`} className="text-inkSoft text-sm hover:text-terracotta transition-colors">{SITE.phone}</a>
+                  <h3 className="eyebrow text-amber mb-1 font-bold text-xs">Phone</h3>
+                  <a href={`tel:${SITE.phoneHref}`} className="text-inkSoft text-sm hover:text-amber font-medium transition-colors">{SITE.phone}</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-11 h-11 flex items-center justify-center bg-espresso/8 shrink-0">
-                  <Mail size={20} className="text-espresso" />
+                <div className="w-11 h-11 flex items-center justify-center bg-black text-amber border border-amber/20 shrink-0">
+                  <Mail size={18} />
                 </div>
                 <div>
-                  <h3 className="eyebrow text-inkSoft mb-1">Email</h3>
-                  <a href={`mailto:${SITE.email}`} className="text-inkSoft text-sm hover:text-terracotta transition-colors">{SITE.email}</a>
+                  <h3 className="eyebrow text-amber mb-1 font-bold text-xs">Email</h3>
+                  <a href={`mailto:${SITE.email}`} className="text-inkSoft text-sm hover:text-amber font-medium transition-colors">{SITE.email}</a>
                 </div>
               </div>
             </div>
@@ -83,47 +86,47 @@ export default function Contact() {
           {/* Contact form */}
           <div>
             {submitted ? (
-              <div className="bg-cream p-8 lg:p-10 border border-ink/8 text-center">
-                <CheckCircle2 size={44} className="text-terracotta mx-auto mb-5" />
+              <div className="bg-white p-8 lg:p-10 border border-neutral-200 text-center shadow-sm">
+                <CheckCircle2 size={44} className="text-amber mx-auto mb-5" />
                 <h2 className="font-display text-xl font-medium text-ink mb-3">Message sent</h2>
                 <p className="text-inkSoft text-sm mb-6">Thank you, {form.name.split(' ')[0]}. We'll get back to you within 24 hours.</p>
-                <button onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', package: '', message: '' }); }} className="text-espresso font-semibold text-sm border-b border-terracotta pb-1 hover:text-terracotta transition-colors">
+                <button onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', package: '', message: '' }); }} className="text-ink font-bold uppercase tracking-wider text-xs border-b-2 border-amber pb-1 hover:text-amber-dark transition-colors">
                   Send another message
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-cream p-6 lg:p-8 border border-ink/8 space-y-5">
+              <form onSubmit={handleSubmit} className="bg-white p-6 lg:p-8 border border-neutral-200 space-y-5 shadow-sm">
                 <h2 className="font-display text-xl font-medium text-ink mb-2">Send us a message</h2>
                 <div>
-                  <label className="block text-xs font-medium text-inkSoft mb-1.5 tracking-wide">Name *</label>
-                  <input type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={`w-full px-4 py-3 border bg-sand/40 text-ink text-sm focus:outline-none focus:ring-1 focus:ring-terracotta focus:border-terracotta transition-colors ${errors.name ? 'border-red-400' : 'border-ink/12'}`} placeholder="Your full name" />
+                  <label className="block text-xs font-bold text-inkSoft mb-1.5 uppercase tracking-wider">Name *</label>
+                  <input type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={`w-full px-4 py-3 border bg-white text-ink text-sm focus:outline-none focus:ring-1 focus:ring-amber focus:border-amber transition-colors ${errors.name ? 'border-red-400' : 'border-neutral-200'}`} placeholder="Your full name" />
                   {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-inkSoft mb-1.5 tracking-wide">Email *</label>
-                  <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={`w-full px-4 py-3 border bg-sand/40 text-ink text-sm focus:outline-none focus:ring-1 focus:ring-terracotta focus:border-terracotta transition-colors ${errors.email ? 'border-red-400' : 'border-ink/12'}`} placeholder="you@example.com" />
+                  <label className="block text-xs font-bold text-inkSoft mb-1.5 uppercase tracking-wider">Email *</label>
+                  <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={`w-full px-4 py-3 border bg-white text-ink text-sm focus:outline-none focus:ring-1 focus:ring-amber focus:border-amber transition-colors ${errors.email ? 'border-red-400' : 'border-neutral-200'}`} placeholder="you@example.com" />
                   {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-inkSoft mb-1.5 tracking-wide">Phone *</label>
-                  <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={`w-full px-4 py-3 border bg-sand/40 text-ink text-sm focus:outline-none focus:ring-1 focus:ring-terracotta focus:border-terracotta transition-colors ${errors.phone ? 'border-red-400' : 'border-ink/12'}`} placeholder="+267 ..." />
+                  <label className="block text-xs font-bold text-inkSoft mb-1.5 uppercase tracking-wider">Phone *</label>
+                  <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={`w-full px-4 py-3 border bg-white text-ink text-sm focus:outline-none focus:ring-1 focus:ring-amber focus:border-amber transition-colors ${errors.phone ? 'border-red-400' : 'border-neutral-200'}`} placeholder="+267 ..." />
                   {errors.phone && <p className="text-xs text-red-500 mt-1">{errors.phone}</p>}
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-inkSoft mb-1.5 tracking-wide">Which package are you interested in?</label>
-                  <select value={form.package} onChange={(e) => setForm({ ...form, package: e.target.value })} className="w-full px-4 py-3 border border-ink/12 bg-sand/40 text-ink text-sm focus:outline-none focus:ring-1 focus:ring-terracotta focus:border-terracotta transition-colors">
+                  <label className="block text-xs font-bold text-inkSoft mb-1.5 uppercase tracking-wider">Which package are you interested in?</label>
+                  <select value={form.package} onChange={(e) => setForm({ ...form, package: e.target.value })} className="w-full px-4 py-3 border border-neutral-200 bg-white text-ink text-sm focus:outline-none focus:ring-1 focus:ring-amber focus:border-amber transition-colors">
                     <option value="">Select a package...</option>
                     {packages.map((p) => (<option key={p.slug} value={p.name}>{p.name}</option>))}
                     <option value="other">Other</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-inkSoft mb-1.5 tracking-wide">Message *</label>
-                  <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} rows={4} className={`w-full px-4 py-3 border bg-sand/40 text-ink text-sm focus:outline-none focus:ring-1 focus:ring-terracotta focus:border-terracotta transition-colors resize-none ${errors.message ? 'border-red-400' : 'border-ink/12'}`} placeholder="Tell us about your ideal safari..." />
+                  <label className="block text-xs font-bold text-inkSoft mb-1.5 uppercase tracking-wider">Message *</label>
+                  <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} rows={4} className={`w-full px-4 py-3 border bg-white text-ink text-sm focus:outline-none focus:ring-1 focus:ring-amber focus:border-amber transition-colors resize-none ${errors.message ? 'border-red-400' : 'border-neutral-200'}`} placeholder="Tell us about your ideal safari..." />
                   {errors.message && <p className="text-xs text-red-500 mt-1">{errors.message}</p>}
                 </div>
-                <button type="submit" className="w-full flex items-center justify-center gap-2 bg-terracotta text-cream font-semibold py-3.5 hover:bg-terracotta-light transition-colors">
-                  <Send size={16} />
+                <button type="submit" className="w-full flex items-center justify-center gap-2 bg-amber text-black font-bold uppercase tracking-wider text-xs py-4 hover:bg-amber-light transition-all duration-200 shadow-md">
+                  <Send size={15} />
                   Send message
                 </button>
               </form>

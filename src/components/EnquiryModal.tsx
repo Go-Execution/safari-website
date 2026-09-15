@@ -112,8 +112,8 @@ export default function EnquiryModal({ open, onClose, packageName }: EnquiryModa
                 placeholder="Tell us what you're looking for..."
               />
             </div>
-            <button type="submit" className="w-full flex items-center justify-center gap-2 bg-terracotta text-cream font-semibold py-3.5 hover:bg-terracotta-light transition-colors">
-              <Send size={16} />
+            <button type="submit" className="w-full flex items-center justify-center gap-2 bg-amber text-black font-bold uppercase tracking-wider text-xs py-3.5 hover:bg-amber-light transition-all duration-200 shadow-sm">
+              <Send size={15} />
               Send enquiry
             </button>
           </form>

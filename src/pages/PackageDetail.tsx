@@ -48,10 +48,10 @@ export default function PackageDetail() {
             {pkg.priceNote && <p className="text-cream/50 text-sm mt-2 max-w-xl">{pkg.priceNote}</p>}
             <button
               onClick={() => setEnquiryOpen(true)}
-              className="mt-7 inline-flex items-center gap-2 bg-terracotta text-cream font-semibold px-6 py-3.5 hover:bg-terracotta-light transition-colors group"
+              className="mt-7 inline-flex items-center gap-2 bg-amber text-black font-bold uppercase tracking-wider text-xs px-8 py-4 hover:bg-amber-light transition-all duration-200 shadow-md group"
             >
               Enquire About This Package
-              <ArrowUpRight size={17} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
           </div>
         </div>
@@ -62,7 +62,10 @@ export default function PackageDetail() {
         <div className="mx-auto max-w-content px-5 lg:px-12">
           <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16">
             <div>
-              <p className="eyebrow text-terracotta mb-4">Trip overview</p>
+              <p className="eyebrow text-amber mb-4 tracking-widest text-xs font-bold flex items-center gap-2">
+                <span className="w-2 h-2 bg-amber inline-block" />
+                Trip overview
+              </p>
               <h2 className="font-display text-2xl lg:text-h3 font-light text-ink mb-6 leading-snug">{pkg.overview}</h2>
               {pkg.highlights && (
                 <div className="mt-8">
@@ -112,7 +115,10 @@ export default function PackageDetail() {
       <section className="py-20 lg:py-32 bg-cream">
         <div className="mx-auto max-w-content px-5 lg:px-12">
           <div className="mb-12 lg:mb-16">
-            <p className="eyebrow text-terracotta mb-5">Itinerary</p>
+            <p className="eyebrow text-amber mb-4 tracking-widest text-xs font-bold flex items-center gap-2">
+              <span className="w-2 h-2 bg-amber inline-block" />
+              Itinerary
+            </p>
             <h2 className="font-display text-3xl lg:text-h2 font-light text-ink">Day by day</h2>
           </div>
           <div className="max-w-3xl">
@@ -167,7 +173,10 @@ export default function PackageDetail() {
       <section className="py-20 lg:py-32 bg-sand">
         <div className="mx-auto max-w-content px-5 lg:px-12">
           <div className="mb-12">
-            <p className="eyebrow text-terracotta mb-5">Gallery</p>
+            <p className="eyebrow text-amber mb-4 tracking-widest text-xs font-bold flex items-center gap-2">
+              <span className="w-2 h-2 bg-amber inline-block" />
+              Gallery
+            </p>
             <h2 className="font-display text-3xl lg:text-h2 font-light text-ink">Photo gallery</h2>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
@@ -183,16 +192,16 @@ export default function PackageDetail() {
       </section>
 
       {/* Closing CTA */}
-      <section className="py-16 lg:py-24 bg-espresso text-cream">
+      <section className="py-16 lg:py-24 bg-black text-cream border-t border-white/10">
         <div className="mx-auto max-w-content px-5 lg:px-12 text-center">
           <h2 className="font-display text-2xl lg:text-h3 font-light text-cream mb-4">Interested in this itinerary?</h2>
-          <p className="text-cream/60 text-base mb-7 max-w-xl mx-auto">Get in touch and we'll tailor it to your dates, group size, and preferences.</p>
+          <p className="text-cream/70 text-base mb-7 max-w-xl mx-auto">Get in touch and we'll tailor it to your dates, group size, and preferences.</p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <button onClick={() => setEnquiryOpen(true)} className="inline-flex items-center gap-2 bg-terracotta text-cream font-semibold px-6 py-3.5 hover:bg-terracotta-light transition-colors group">
+            <button onClick={() => setEnquiryOpen(true)} className="inline-flex items-center gap-2 bg-amber text-black font-bold uppercase tracking-wider text-xs px-8 py-4 hover:bg-amber-light transition-all duration-200 shadow-md group">
               Enquire now
-              <ArrowUpRight size={17} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
-            <Link to="/contact" className="inline-flex items-center gap-2 border border-cream/25 text-cream font-semibold px-6 py-3.5 hover:bg-cream hover:text-espresso transition-colors">
+            <Link to="/contact" className="inline-flex items-center gap-2 border border-cream/30 text-cream font-bold uppercase tracking-wider text-xs px-8 py-4 hover:bg-amber hover:text-black hover:border-amber transition-all duration-200">
               Contact us
             </Link>
           </div>
