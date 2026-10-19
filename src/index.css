@@ -10,8 +10,8 @@
   }
   body {
     font-family: 'DM Sans', sans-serif;
-    background-color: #F8F9FA;
-    color: #0D0D0D;
+    background-color: #F2EBE0;
+    color: #1A1310;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -19,8 +19,8 @@
     font-family: 'Cormorant', serif;
   }
   ::selection {
-    background-color: #FFCC00;
-    color: #000000;
+    background-color: #C25B3E;
+    color: #FAF6EF;
   }
 }
 

@@ -24,7 +24,7 @@ export default function Services() {
         </div>
         <div className="relative h-full flex items-end pb-14 lg:pb-20">
           <div className="mx-auto max-w-content px-5 lg:px-12 w-full">
-            <p className="eyebrow text-amber mb-4 animate-fade-up">Services</p>
+            <p className="eyebrow text-terracotta mb-4 animate-fade-up">Services</p>
             <h1 className="font-display text-4xl lg:text-h1 font-light text-cream animate-fade-up">What We Offer</h1>
           </div>
         </div>
@@ -53,8 +53,8 @@ export default function Services() {
                 </div>
                 <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
                   <div className="flex items-center gap-4 mb-5">
-                    <span className="font-display text-5xl font-bold text-amber/40">{String(i + 1).padStart(2, '0')}</span>
-                    <div className="w-10 h-10 flex items-center justify-center bg-black text-amber border border-amber/20">
+                    <span className="font-display text-5xl font-light text-terracotta/30">{String(i + 1).padStart(2, '0')}</span>
+                    <div className="w-10 h-10 flex items-center justify-center bg-espresso text-amber border border-espresso-light/30">
                       <Icon size={20} />
                     </div>
                   </div>
@@ -68,12 +68,12 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 lg:py-24 bg-black text-cream border-t border-white/10">
+      <section className="py-16 lg:py-24 bg-espresso text-cream border-t border-espresso-light/20">
         <div className="mx-auto max-w-content px-5 lg:px-12 text-center">
           <h2 className="font-display text-2xl lg:text-h3 font-light text-cream mb-6">See how these come together in our packages</h2>
-          <Link to="/packages" className="inline-flex items-center gap-2 bg-amber text-black font-bold uppercase tracking-wider text-xs px-8 py-4 hover:bg-amber-light transition-all duration-200 shadow-md group">
+          <Link to="/packages" className="inline-flex items-center gap-2 bg-terracotta text-cream font-semibold px-8 py-4 hover:bg-terracotta-light transition-colors shadow-sm group">
             View Packages
-            <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </section>

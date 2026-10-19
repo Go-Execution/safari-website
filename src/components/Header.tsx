@@ -33,19 +33,19 @@ export default function Header() {
       <div className={`hidden lg:block bg-espresso-dark text-sand/70 text-xs transition-all duration-300 ${scrolled && !isHome ? 'max-h-0 overflow-hidden opacity-0' : 'max-h-10 opacity-100'}`}>
         <div className="mx-auto max-w-content px-6 lg:px-12 flex items-center justify-between py-2">
           <div className="flex items-center gap-6">
-            <a href={`tel:${SITE.phoneHref}`} className="flex items-center gap-2 hover:text-amber transition-colors">
-              <Phone size={12} className="text-amber" />
+            <a href={`tel:${SITE.phoneHref}`} className="flex items-center gap-2 hover:text-terracotta transition-colors">
+              <Phone size={12} className="text-terracotta" />
               <span>{SITE.phone}</span>
             </a>
-            <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 hover:text-amber transition-colors">
-              <Mail size={12} className="text-amber" />
+            <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 hover:text-terracotta transition-colors">
+              <Mail size={12} className="text-terracotta" />
               <span>{SITE.email}</span>
             </a>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-sand/40">Follow</span>
-            <a href="#" className="hover:text-amber transition-colors">Instagram</a>
-            <a href="#" className="hover:text-amber transition-colors">Facebook</a>
+            <a href="#" className="hover:text-terracotta transition-colors">Instagram</a>
+            <a href="#" className="hover:text-terracotta transition-colors">Facebook</a>
           </div>
         </div>
       </div>
@@ -69,11 +69,11 @@ export default function Header() {
                   key={link.path}
                   to={link.path}
                   className={`text-sm font-medium tracking-wide transition-colors relative group py-2 ${
-                    isTransparent ? 'text-cream/85 hover:text-amber' : 'text-cream/85 hover:text-amber'
+                    isTransparent ? 'text-cream/85 hover:text-cream' : 'text-cream/85 hover:text-cream'
                   } ${location.pathname === link.path ? 'text-amber' : ''}`}
                 >
                   {link.label}
-                  <span className={`absolute -bottom-0.5 left-0 h-px bg-amber origin-left transition-transform duration-400 ${location.pathname === link.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+                  <span className={`absolute -bottom-0.5 left-0 h-0.5 bg-amber origin-left transition-transform duration-400 ${location.pathname === link.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
                 </Link>
               ))}
             </nav>
@@ -82,7 +82,7 @@ export default function Header() {
             <div className="flex items-center gap-3">
               <Link
                 to="/plan-your-trip"
-                className="hidden sm:inline-flex items-center gap-1.5 bg-amber text-black font-bold uppercase tracking-wider text-xs px-5 py-2.5 hover:bg-amber-light transition-all duration-200 group shadow-sm"
+                className="hidden sm:inline-flex items-center gap-1.5 bg-terracotta text-cream font-semibold uppercase tracking-wider text-xs px-5 py-2.5 hover:bg-terracotta-light transition-all duration-200 group shadow-sm"
               >
                 Plan Your Trip
                 <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -134,7 +134,7 @@ export default function Header() {
                 <Mail size={16} className="text-amber" />
                 {SITE.email}
               </a>
-              <Link to="/plan-your-trip" onClick={handleNavClick} className="block w-full text-center bg-amber text-black font-bold uppercase tracking-wider text-xs py-3.5 mt-4 hover:bg-amber-light transition-colors">
+              <Link to="/plan-your-trip" onClick={handleNavClick} className="block w-full text-center bg-terracotta text-cream font-semibold uppercase tracking-wider text-xs py-3.5 mt-4 hover:bg-terracotta-light transition-colors">
                 Plan Your Trip
               </Link>
             </div>

@@ -57,11 +57,11 @@ export default function Home() {
                 Safari Knight Tours is a registered Botswana travel management company offering fully customised safari and holiday experiences across Botswana and beyond.
               </p>
               <div className="mt-9 flex flex-wrap gap-4">
-                <Link to="/plan-your-trip" className="inline-flex items-center gap-2 bg-amber text-black font-bold uppercase tracking-wider text-xs px-8 py-4 hover:bg-amber-light transition-all duration-200 shadow-md group">
+                <Link to="/plan-your-trip" className="inline-flex items-center gap-2 bg-terracotta text-cream font-semibold px-8 py-4 hover:bg-terracotta-light transition-colors shadow-sm group">
                   Plan Your Trip
-                  <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Link>
-                <Link to="/packages" className="inline-flex items-center gap-2 border border-cream/40 text-cream font-bold uppercase tracking-wider text-xs px-8 py-4 hover:bg-amber hover:text-black hover:border-amber transition-all duration-200">
+                <Link to="/packages" className="inline-flex items-center gap-2 border border-cream/35 text-cream font-semibold px-8 py-4 hover:bg-cream hover:text-espresso transition-colors">
                   View Packages
                 </Link>
               </div>
@@ -83,16 +83,16 @@ export default function Home() {
               <Link
                 key={card.path}
                 to={card.path}
-                className={`group relative overflow-hidden bg-black border border-white/10 hover:border-amber transition-all duration-300 ${i % 2 === 1 ? 'lg:mt-12' : ''}`}
+                className={`group relative overflow-hidden bg-espresso shadow-md border border-espresso-light/40 hover:border-terracotta/60 transition-all duration-300 ${i % 2 === 1 ? 'lg:mt-12' : ''}`}
               >
                 <div className="aspect-[3/4] lg:aspect-[4/5] overflow-hidden">
-                  <img src={card.image} alt={card.title} className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110 opacity-75 group-hover:opacity-90" loading="lazy" />
+                  <img src={card.image} alt={card.title} className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-95" loading="lazy" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-espresso/95 via-espresso/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-5">
                   <h3 className="font-display text-xl lg:text-2xl font-medium text-cream mb-0.5">{card.title}</h3>
-                  <p className="text-xs text-cream/65">{card.desc}</p>
-                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs text-amber font-bold tracking-widest uppercase">
+                  <p className="text-xs text-cream/75">{card.desc}</p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs text-amber font-semibold tracking-wider uppercase">
                     EXPLORE
                     <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                   </span>
@@ -108,8 +108,8 @@ export default function Home() {
         <div className="mx-auto max-w-content px-5 lg:px-12">
           <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-20 items-center">
             <div className="order-2 lg:order-1">
-              <p className="eyebrow text-amber mb-4 tracking-widest text-xs font-bold flex items-center gap-2">
-                <span className="w-2 h-2 bg-amber inline-block" />
+              <p className="eyebrow text-terracotta mb-4 tracking-widest text-xs font-semibold flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-terracotta rounded-full inline-block" />
                 About Safari Knight
               </p>
               <h2 className="font-display text-3xl lg:text-h2 font-light text-ink leading-[1.1] mb-6 text-balance">
@@ -118,19 +118,17 @@ export default function Home() {
               <p className="text-base lg:text-body-lg text-inkSoft leading-relaxed mb-6 max-w-prose-narrow">
                 Safari Knight Tours is a registered company located in the heart of Botswana. As a travel agency we offer a <strong className="text-ink font-semibold">full customised safari and holidays experience</strong> to exciting destinations throughout Botswana and beyond.
               </p>
-              <Link to="/about" className="inline-flex items-center gap-2 text-ink font-bold uppercase tracking-wider text-xs border-b-2 border-amber pb-1 hover:text-amber-dark transition-colors group">
+              <Link to="/about" className="inline-flex items-center gap-2 text-espresso font-semibold border-b border-terracotta pb-1 hover:text-terracotta transition-colors group">
                 Learn more about us
-                <ArrowRight size={15} className="text-amber group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={16} className="text-terracotta group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
             <div className="order-1 lg:order-2 relative">
-              <div className="overflow-hidden">
+              <div className="overflow-hidden shadow-md">
                 <div className="aspect-[5/4]">
                   <img src={aboutImage} alt="Majestic male lion surveying the Botswana wilderness" className="w-full h-full object-cover object-center" loading="lazy" />
                 </div>
               </div>
-              {/* Decorative offset NatGeo yellow frame */}
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 border-l-4 border-b-4 border-amber hidden lg:block" />
             </div>
           </div>
         </div>
@@ -155,13 +153,13 @@ export default function Home() {
                   className={`w-full flex items-center justify-between py-5 text-left transition-colors group ${activeTab === i ? 'text-cream' : 'text-cream/45 hover:text-cream/70'}`}
                 >
                   <div className="flex items-center gap-4">
-                    <span className={`font-display text-sm w-6 ${activeTab === i ? 'text-amber' : 'text-cream/30'}`}>
+                    <span className={`font-display text-sm w-6 ${activeTab === i ? 'text-amber' : 'text-cream/40'}`}>
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     <span className="font-display text-xl lg:text-2xl font-light tracking-tight">{pillar.title}</span>
                   </div>
                   <span className="shrink-0 ml-4">
-                    {activeTab === i ? <Minus size={18} className="text-amber" /> : <Plus size={18} />}
+                    {activeTab === i ? <Minus size={18} className="text-terracotta" /> : <Plus size={18} />}
                   </span>
                 </button>
               ))}
@@ -246,32 +244,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials — large pull quotes */}
+      {/* Testimonials */}
       <section className="py-20 lg:py-32 bg-sand">
         <div className="mx-auto max-w-content px-5 lg:px-12">
           <div className="mb-12 lg:mb-16">
-            <p className="eyebrow text-amber mb-4 tracking-widest text-xs font-bold flex items-center gap-2">
-              <span className="w-2 h-2 bg-amber inline-block" />
+            <p className="eyebrow text-terracotta mb-4 tracking-widest text-xs font-semibold flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-terracotta rounded-full inline-block" />
               Client stories
             </p>
             <h2 className="font-display text-3xl lg:text-h2 font-light text-ink">
               Travellers who trusted us<br />with their adventure
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-px bg-neutral-200">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
-              <div key={i} className="bg-sand p-8 lg:p-10 border-l-2 border-transparent hover:border-l-amber transition-colors">
-                <Quote size={28} className="text-amber mb-6" />
-                <p className="text-ink text-lg lg:text-xl leading-relaxed mb-8 font-display font-light italic">
-                  "{t.quote}"
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-neutral-300">
+              <div key={i} className="bg-cream p-8 border border-espresso/10 hover:border-terracotta/40 transition-colors shadow-sm flex flex-col justify-between">
+                <div>
+                  <Quote size={24} className="text-terracotta mb-4" />
+                  <p className="text-ink text-base leading-relaxed mb-6 font-display font-light italic">
+                    "{t.quote}"
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 pt-4 border-t border-espresso/10">
+                  <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-espresso/10">
                     <img src={t.photo} alt={t.name} className="w-full h-full object-cover object-center" loading="lazy" />
                   </div>
                   <div>
-                    <p className="font-bold text-ink text-sm uppercase tracking-wide">{t.name}</p>
-                    {t.sample && <p className="text-xs text-inkSoft/60 mt-0.5">Verified Traveler</p>}
+                    <p className="font-semibold text-ink text-sm">{t.name}</p>
+                    <p className="text-xs text-inkSoft/70 mt-0.5">{t.location}</p>
                   </div>
                 </div>
               </div>
@@ -284,22 +284,22 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img src={ctaImage} alt="Mokoro canoe navigating the pristine channels of the Okavango Delta" className="w-full h-full object-cover object-center" loading="lazy" />
-          <div className="absolute inset-0 bg-black/85" />
+          <div className="absolute inset-0 bg-espresso/85" />
         </div>
         <div className="relative mx-auto max-w-content px-5 lg:px-12 py-24 lg:py-32">
           <div className="max-w-2xl">
             <h2 className="font-display text-3xl lg:text-h2 font-light text-cream mb-5 text-balance">
               Ready to start planning<br />your Botswana safari?
             </h2>
-            <p className="text-cream/70 text-lg mb-8 max-w-lg">
+            <p className="text-cream/75 text-lg mb-8 max-w-lg">
               Use our trip planner or call us directly — we're here to help.
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <Link to="/plan-your-trip" className="inline-flex items-center gap-2 bg-amber text-black font-bold uppercase tracking-wider text-xs px-8 py-4.5 hover:bg-amber-light transition-all duration-200 shadow-md group">
+              <Link to="/plan-your-trip" className="inline-flex items-center gap-2 bg-terracotta text-cream font-semibold px-8 py-4 hover:bg-terracotta-light transition-colors shadow-sm group">
                 Plan Your Trip
-                <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
-              <a href={`tel:${SITE.phoneHref}`} className="inline-flex items-center gap-2 border border-cream/30 text-cream font-bold uppercase tracking-wider text-xs px-8 py-4.5 hover:bg-amber hover:text-black hover:border-amber transition-all duration-200">
+              <a href={`tel:${SITE.phoneHref}`} className="inline-flex items-center gap-2 border border-cream/30 text-cream font-semibold px-8 py-4 hover:bg-cream hover:text-espresso transition-colors">
                 <Phone size={16} />
                 {SITE.phone}
               </a>

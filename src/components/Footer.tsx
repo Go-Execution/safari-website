@@ -39,14 +39,14 @@ export default function Footer() {
 
           {/* Column 2: Useful links */}
           <div>
-            <h4 className="eyebrow text-amber mb-5 font-bold tracking-widest text-xs flex items-center gap-2">
-              <span className="w-1.5 h-1.5 bg-amber inline-block" />
+            <h4 className="eyebrow text-terracotta mb-5 font-semibold tracking-widest text-xs flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-terracotta rounded-full inline-block" />
               Explore
             </h4>
             <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-sm text-sand/75 hover:text-amber transition-colors">
+                  <Link to={link.path} className="text-sm text-sand/75 hover:text-cream transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -56,14 +56,14 @@ export default function Footer() {
 
           {/* Column 3: Safari packages */}
           <div>
-            <h4 className="eyebrow text-amber mb-5 font-bold tracking-widest text-xs flex items-center gap-2">
-              <span className="w-1.5 h-1.5 bg-amber inline-block" />
+            <h4 className="eyebrow text-terracotta mb-5 font-semibold tracking-widest text-xs flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-terracotta rounded-full inline-block" />
               Safari packages
             </h4>
             <ul className="space-y-3">
               {packages.map((pkg) => (
                 <li key={pkg.slug}>
-                  <Link to={`/packages/${pkg.slug}`} className="text-sm text-sand/75 hover:text-amber transition-colors leading-snug">
+                  <Link to={`/packages/${pkg.slug}`} className="text-sm text-sand/75 hover:text-cream transition-colors leading-snug">
                     {pkg.shortName}
                   </Link>
                 </li>
@@ -73,18 +73,18 @@ export default function Footer() {
 
           {/* Column 4: Social + get in touch */}
           <div>
-            <h4 className="eyebrow text-amber mb-5 font-bold tracking-widest text-xs flex items-center gap-2">
-              <span className="w-1.5 h-1.5 bg-amber inline-block" />
+            <h4 className="eyebrow text-terracotta mb-5 font-semibold tracking-widest text-xs flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-terracotta rounded-full inline-block" />
               Get in touch
             </h4>
             <p className="text-sm text-sand/60 mb-5 leading-relaxed">
               Ready to start planning? Reach out — we'd love to hear from you.
             </p>
             <div className="flex items-center gap-3">
-              <a href="#" aria-label="Instagram" className="w-10 h-10 flex items-center justify-center border border-white/20 text-sand/75 hover:bg-amber hover:text-black hover:border-amber transition-all">
+              <a href="#" aria-label="Instagram" className="w-10 h-10 flex items-center justify-center border border-sand/20 text-sand/75 hover:bg-terracotta hover:text-cream hover:border-terracotta transition-all rounded-sm">
                 <Instagram size={16} />
               </a>
-              <a href="#" aria-label="Facebook" className="w-10 h-10 flex items-center justify-center border border-white/20 text-sand/75 hover:bg-amber hover:text-black hover:border-amber transition-all">
+              <a href="#" aria-label="Facebook" className="w-10 h-10 flex items-center justify-center border border-sand/20 text-sand/75 hover:bg-terracotta hover:text-cream hover:border-terracotta transition-all rounded-sm">
                 <Facebook size={16} />
               </a>
             </div>
