@@ -149,17 +149,22 @@ export default function Home() {
               {pillars.map((pillar, i) => (
                 <button
                   key={i}
+                  type="button"
                   onClick={() => setActiveTab(i)}
-                  className={`w-full flex items-center justify-between py-5 text-left transition-colors group ${activeTab === i ? 'text-cream' : 'text-cream/45 hover:text-cream/70'}`}
+                  onMouseEnter={() => setActiveTab(i)}
+                  onFocus={() => setActiveTab(i)}
+                  className={`w-full flex items-center justify-between py-5 text-left transition-all duration-200 group cursor-pointer ${activeTab === i ? 'text-cream' : 'text-cream/45 hover:text-cream/80'}`}
                 >
                   <div className="flex items-center gap-4">
-                    <span className={`font-display text-sm w-6 ${activeTab === i ? 'text-amber' : 'text-cream/40'}`}>
+                    <span className={`font-display text-sm w-6 transition-colors duration-200 ${activeTab === i ? 'text-amber font-semibold' : 'text-cream/40 group-hover:text-amber/70'}`}>
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <span className="font-display text-xl lg:text-2xl font-light tracking-tight">{pillar.title}</span>
+                    <span className={`font-display text-xl lg:text-2xl font-light tracking-tight transition-transform duration-200 ${activeTab === i ? 'translate-x-1' : 'group-hover:translate-x-1'}`}>
+                      {pillar.title}
+                    </span>
                   </div>
-                  <span className="shrink-0 ml-4">
-                    {activeTab === i ? <Minus size={18} className="text-terracotta" /> : <Plus size={18} />}
+                  <span className="shrink-0 ml-4 transition-transform duration-200">
+                    {activeTab === i ? <Minus size={18} className="text-terracotta" /> : <Plus size={18} className="text-cream/40 group-hover:text-cream/70" />}
                   </span>
                 </button>
               ))}
