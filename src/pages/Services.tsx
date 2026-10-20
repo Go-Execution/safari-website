@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { BedDouble, Users, Binoculars, Compass, ArrowRight } from 'lucide-react';
 import { services } from '@/data/content';
 
-const heroImage = 'https://images.unsplash.com/photo-1551009175-8a68da93d5f9?auto=format&fit=crop&w=1920&q=80';
+const heroImage = 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1920&q=80';
 
 const serviceImages = [
   'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80',

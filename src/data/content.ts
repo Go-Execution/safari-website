@@ -100,9 +100,9 @@ export const packages: Package[] = [
     duration: '5 Days / 4 Nights',
     price: 'From USD 3,077 to USD 4,000 per person sharing',
     priceNote: 'Indicative price — final cost depends on season and customisation. This is an example itinerary and can be customised on request.',
-    heroImage: 'https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/assets/images/packages/delta-chalet.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80',
+      '/assets/images/packages/delta-chalet.jpg',
       '/assets/images/packages/luxury-bush-plane-flight.jpg',
       'https://images.pexels.com/photos/35722304/pexels-photo-35722304.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1800',
       'https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=1200&q=80',
@@ -304,7 +304,6 @@ export const pillars = [
     text: 'While we endeavour to offer competitive prices, we will always favour ethics, quality, and financial protection. We place the utmost importance on ensuring our guides are well paid and looked after, and our safari vehicle fleet is well maintained.',
   },
 ];
-
 export const testimonials = [
   {
     name: 'Mark & Sarah Jenkins',
@@ -314,10 +313,31 @@ export const testimonials = [
     sample: false,
   },
   {
+    name: 'The Van der Bilt Family (Lars, Anouk & Kids)',
+    location: 'Amsterdam, Netherlands',
+    quote: 'Travelling with our 7 and 10 year old children through Botswana felt daunting until we spoke with Safari Knight. They curated the most engaging, family-friendly game drives, pointed out every bird and animal track to the kids, and arranged safe, comfortable camp lodges. Unforgettable for the whole family!',
+    photo: '/assets/images/reviews/european-family.jpg',
+    sample: false,
+  },
+  {
     name: 'Elena & Lukas Weber',
     location: 'Munich, Germany',
     quote: 'The luxury fly-in safari exceeded all expectations. Flying into the remote bush airstrip on a light aircraft and seeing herds of elephants from the air was magical. Every single detail, from the lodge hospitality to the private game drives, was flawless.',
     photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+    sample: false,
+  },
+  {
+    name: 'Charlotte Dubois',
+    location: 'Geneva, Switzerland',
+    quote: 'As a solo female traveller, safety, genuine local expertise, and serene wilderness were my top priorities. Safari Knight took exquisite care of every detail from the bush flights to the mokoro trails. Waking up to delta bird calls was sheer bliss.',
+    photo: '/assets/images/reviews/european-woman.jpg',
+    sample: false,
+  },
+  {
+    name: 'Dr. Henrik Lindqvist',
+    location: 'Stockholm, Sweden',
+    quote: 'The level of professionalism and ecological understanding of the Okavango habitats was exceptional. Having travelled on safaris across East Africa, Botswana with Safari Knight was leagues ahead in raw wilderness authenticity and uncrowded sightings.',
+    photo: '/assets/images/reviews/european-man.jpg',
     sample: false,
   },
   {
@@ -338,14 +358,14 @@ export const testimonials = [
     name: 'Rajiv & Priya Sharma',
     location: 'Singapore',
     quote: 'Watching hundreds of elephants gather along the Chobe River at sunset was breathtaking. The attention to safety, wonderful food in camp, and deep knowledge shared by the guides made this trip unforgettable for our entire family.',
-    photo: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80',
+    photo: '/assets/images/reviews/rajiv-priya.jpg',
     sample: false,
   },
   {
     name: 'Kagiso & Tebogo Moloi',
     location: 'Gaborone, Botswana',
     quote: 'Even as Botswana locals who know our country well, Safari Knight gave us an intimate, respectful look into pristine pockets of the Delta we had never experienced. Proud to support an authentic homegrown safari company.',
-    photo: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80',
+    photo: '/assets/images/reviews/kagiso-tebogo.jpg',
     sample: false,
   },
 ];
@@ -353,7 +373,7 @@ export const testimonials = [
 export const planTripDestinations = [
   { id: 'unsure', label: 'Not sure — recommend a package for me', image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80' },
   { id: '10-day-camping', label: '10 Day Camping In Okavango Delta', image: 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80' },
-  { id: 'okavango-safari', label: 'Okavango Delta Safari', image: 'https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80' },
+  { id: 'okavango-safari', label: 'Okavango Delta Safari', image: '/assets/images/packages/delta-chalet.jpg' },
   { id: 'luxury-belmond', label: 'Luxury Belmond, Delta & Victoria Falls', image: 'https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?auto=format&fit=crop&w=1200&q=80' },
   { id: '7-day-delta-chobe', label: '7 Day Delta & Chobe', image: 'https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&h=900&w=1920' },
 ];

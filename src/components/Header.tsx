@@ -102,39 +102,41 @@ export default function Header() {
       {/* Mobile overlay menu */}
       {menuOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
-          <div className="absolute inset-0 bg-espresso-dark/98 backdrop-blur-md" onClick={() => setMenuOpen(false)} />
-          <div className="relative h-full flex flex-col">
-            <div className="flex items-center justify-between px-5 h-16 border-b border-espresso-light/20">
+          <div className="absolute inset-0 bg-espresso/60 backdrop-blur-sm" onClick={() => setMenuOpen(false)} />
+          <div className="relative h-full flex flex-col bg-cream text-espresso shadow-2xl">
+            <div className="flex items-center justify-between px-5 h-16 border-b border-espresso/10">
               <div className="flex items-center gap-2.5">
                 <img src={SITE.logo} alt="Safari Knight Tours" className="h-9 w-auto object-contain" />
-                <span className="font-display text-lg font-medium text-cream">Safari Knight</span>
+                <span className="font-display text-lg font-medium text-espresso">Safari Knight</span>
               </div>
-              <button onClick={() => setMenuOpen(false)} className="p-2 -mr-2 text-cream" aria-label="Close menu">
+              <button onClick={() => setMenuOpen(false)} className="p-2 -mr-2 text-espresso hover:text-terracotta transition-colors" aria-label="Close menu">
                 <X size={26} />
               </button>
             </div>
-            <nav className="flex-1 flex flex-col justify-center px-5 gap-1">
+            <nav className="flex-1 flex flex-col justify-center px-6 gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={handleNavClick}
-                  className={`font-display text-3xl font-light py-3 transition-colors ${location.pathname === link.path ? 'text-amber' : 'text-cream hover:text-amber'}`}
+                  className={`font-display text-3xl font-light py-3 transition-colors ${
+                    location.pathname === link.path ? 'text-terracotta font-normal' : 'text-espresso/90 hover:text-terracotta'
+                  }`}
                 >
                   {link.label}
                 </Link>
               ))}
             </nav>
-            <div className="px-5 pb-8 pt-6 border-t border-espresso-light/20 space-y-3">
-              <a href={`tel:${SITE.phoneHref}`} className="flex items-center gap-3 text-cream/75 text-sm">
-                <Phone size={16} className="text-amber" />
+            <div className="px-6 pb-8 pt-6 border-t border-espresso/10 space-y-3 bg-cream">
+              <a href={`tel:${SITE.phoneHref}`} className="flex items-center gap-3 text-espresso/80 hover:text-terracotta text-sm transition-colors">
+                <Phone size={16} className="text-terracotta" />
                 {SITE.phone}
               </a>
-              <a href={`mailto:${SITE.email}`} className="flex items-center gap-3 text-cream/75 text-sm">
-                <Mail size={16} className="text-amber" />
+              <a href={`mailto:${SITE.email}`} className="flex items-center gap-3 text-espresso/80 hover:text-terracotta text-sm transition-colors">
+                <Mail size={16} className="text-terracotta" />
                 {SITE.email}
               </a>
-              <Link to="/plan-your-trip" onClick={handleNavClick} className="block w-full text-center bg-terracotta text-cream font-semibold uppercase tracking-wider text-xs py-3.5 mt-4 hover:bg-terracotta-light transition-colors">
+              <Link to="/plan-your-trip" onClick={handleNavClick} className="block w-full text-center bg-terracotta text-cream font-semibold uppercase tracking-wider text-xs py-3.5 mt-4 hover:bg-terracotta-light transition-colors shadow-sm">
                 Plan Your Trip
               </Link>
             </div>

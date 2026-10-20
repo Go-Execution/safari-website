@@ -23,7 +23,7 @@ const quickLinks = [
   { title: 'About Us', desc: 'Meet the team', path: '/about', image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80' },
   { title: 'What We Offer', desc: 'Tailor-made safaris', path: '/services', image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80' },
   { title: 'Our Packages', desc: 'Four journeys', path: '/packages', image: 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=1200&q=80' },
-  { title: 'Plan Your Trip', desc: 'Build your itinerary', path: '/plan-your-trip', image: 'https://images.unsplash.com/photo-1551009175-8a68da93d5f9?auto=format&fit=crop&w=1200&q=80' },
+  { title: 'Plan Your Trip', desc: 'Build your itinerary', path: '/plan-your-trip', image: '/assets/images/plan-your-trip.jpg' },
 ];
 
 const serviceIcons: Record<string, typeof BedDouble> = { BedDouble, Users, Binoculars, Compass };
