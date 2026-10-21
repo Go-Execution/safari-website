@@ -1,7 +1,9 @@
 export const SITE = {
   name: 'Safari Knight Tours',
-  phone: '+267 72619757 / 75217122',
-  phoneHref: 'tel:+26772619757',
+  phone: '+1 443 864 0098 / +267 75217122',
+  phoneHref: 'tel:+14438640098',
+  secondaryPhone: '+267 75217122',
+  secondaryPhoneHref: 'tel:+26775217122',
   email: 'info@safariknight.co.bw',
   address: 'Regus, Gaborone The Hub, iTowers Ground & First Floor, CBD, Gaborone, Botswana',
   logo: '/assets/images/logo/safarilogo-01.png',

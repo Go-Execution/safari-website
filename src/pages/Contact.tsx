@@ -58,7 +58,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="eyebrow text-terracotta mb-1 font-bold text-xs">Phone</h3>
-                  <a href={`tel:${SITE.phoneHref}`} className="text-inkSoft text-sm hover:text-terracotta font-medium transition-colors">{SITE.phone}</a>
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <a href={`tel:${SITE.phoneHref}`} className="text-inkSoft text-sm hover:text-terracotta font-medium transition-colors">+1 443 864 0098</a>
+                    <span className="text-inkSoft/40">/</span>
+                    <a href={`tel:${SITE.secondaryPhoneHref}`} className="text-inkSoft text-sm hover:text-terracotta font-medium transition-colors">{SITE.secondaryPhone}</a>
+                  </div>
                 </div>
               </div>
               <div className="flex items-start gap-4">
