@@ -7,7 +7,7 @@ const heroImage = 'https://images.unsplash.com/photo-1516426122078-c23e76319801?
 const serviceImages = [
   'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80',
   'https://images.pexels.com/photos/16444281/pexels-photo-16444281.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1800',
-  'https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=1200&q=80',
+  '/assets/images/services/bird-watching-lilac-roller.jpg',
   'https://images.pexels.com/photos/32957448/pexels-photo-32957448.jpeg?auto=compress&cs=tinysrgb&h=500&w=700',
 ];
 

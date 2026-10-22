@@ -45,9 +45,9 @@ export const packages: Package[] = [
     duration: '10 Days',
     price: 'Price on request',
     priceNote: 'Contact us for a seasonal quote',
-    heroImage: 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/assets/images/packages/mobile-camping-safari.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80',
+      '/assets/images/packages/mobile-camping-safari.jpg',
       'https://images.unsplash.com/photo-1528722828814-77b9b83aafb2?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=1200&q=80',
@@ -374,7 +374,7 @@ export const testimonials = [
 
 export const planTripDestinations = [
   { id: 'unsure', label: 'Not sure — recommend a package for me', image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80' },
-  { id: '10-day-camping', label: '10 Day Camping In Okavango Delta', image: 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80' },
+  { id: '10-day-camping', label: '10 Day Camping In Okavango Delta', image: '/assets/images/packages/mobile-camping-safari.jpg' },
   { id: 'okavango-safari', label: 'Okavango Delta Safari', image: '/assets/images/packages/delta-chalet.jpg' },
   { id: 'luxury-belmond', label: 'Luxury Belmond, Delta & Victoria Falls', image: 'https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?auto=format&fit=crop&w=1200&q=80' },
   { id: '7-day-delta-chobe', label: '7 Day Delta & Chobe', image: 'https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&h=900&w=1920' },

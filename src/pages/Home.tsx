@@ -29,7 +29,7 @@ const quickLinks = [
 const serviceIcons: Record<string, typeof BedDouble> = { BedDouble, Users, Binoculars, Compass };
 
 const pillarImages = [
-  'https://images.unsplash.com/photo-1575550959106-5a7defe28b56?auto=format&fit=crop&w=1200&q=80',
+  '/assets/images/safari-camp-history.jpg',
   'https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=1200&q=80',
   'https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1200&q=80',
   'https://images.unsplash.com/photo-1541414779316-956a5084c0d4?auto=format&fit=crop&w=1200&q=80',
