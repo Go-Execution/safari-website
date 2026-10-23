@@ -49,6 +49,15 @@
   .natgeo-frame {
     border: 3px solid #FFCC00;
   }
+  .animate-big5-progress {
+    transform-origin: left;
+    animation: big5progress 5s linear forwards;
+  }
+}
+
+@keyframes big5progress {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
 }
 
 @media (prefers-reduced-motion: reduce) {
