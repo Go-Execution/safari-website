@@ -43,8 +43,8 @@ export const packages: Package[] = [
     shortName: '10 Day Camping',
     category: 'Mobile Camping Safari',
     duration: '10 Days',
-    price: 'Price on request',
-    priceNote: 'Contact us for a seasonal quote',
+    price: 'From $4565',
+    priceNote: 'Indicative price — final cost depends on season and customisation.',
     heroImage: '/assets/images/packages/mobile-camping-safari.jpg',
     gallery: [
       '/assets/images/packages/mobile-camping-safari.jpg',
@@ -100,7 +100,7 @@ export const packages: Package[] = [
     shortName: 'Okavango Delta Safari',
     category: 'Fly-In Lodge Safari',
     duration: '5 Days / 4 Nights',
-    price: 'From USD 3,077 to USD 4,000 per person sharing',
+    price: 'From $3077',
     priceNote: 'Indicative price — final cost depends on season and customisation. This is an example itinerary and can be customised on request.',
     heroImage: '/assets/images/packages/delta-chalet.jpg',
     gallery: [
@@ -143,7 +143,7 @@ export const packages: Package[] = [
     shortName: 'Luxury Belmond',
     category: 'Luxury Fly-In Safari',
     duration: '7 Days / 6 Nights',
-    price: 'Price on request',
+    price: 'From $4565',
     priceNote: 'Prices subject to change seasonally. Contact us for a tailored quote.',
     heroImage: '/assets/images/packages/luxury-bush-plane-airstrip.jpg',
     gallery: [
@@ -192,7 +192,7 @@ export const packages: Package[] = [
     shortName: '7 Day Delta & Chobe',
     category: 'Overland Group Safari',
     duration: '7 Days',
-    price: 'Price on request',
+    price: 'From $4565',
     priceNote: 'Contact us for a seasonal quote. Cross-border route: starts in Windhoek, Namibia, ends in Victoria Falls, Zimbabwe.',
     heroImage: 'https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&h=900&w=1920',
     gallery: [
@@ -287,7 +287,7 @@ export const services = [
 export const pillars = [
   {
     title: 'History',
-    text: 'Safari Knight Tours is a travel management company. As a travel agency we offer a full customised safari and holidays experience to exciting destinations throughout Botswana and beyond. Safari Knight Tours is a registered company located in the heart of Botswana.',
+    text: 'Safari Knight Tours was born from a vision to showcase the extraordinary beauty, wildlife, culture, and natural wonders of Botswana to visitors from around the world. Inspired by the spirit of African adventure, the company aims to give travellers an opportunity to discover the true heart of Botswana through unforgettable safari experiences.',
   },
   {
     title: "Preserving Botswana's natural wonders",
@@ -346,7 +346,7 @@ export const testimonials = [
     name: 'David & Emily Miller',
     location: 'Colorado, United States',
     quote: 'From gliding through quiet papyrus channels on a mokoro to unforgettable predator sightings in Savuti Marsh, Safari Knight delivered a genuine once-in-a-lifetime adventure. The 4x4 vehicles were exceptionally comfortable and well equipped.',
-    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
+    photo: '/assets/images/reviews/dave-emily.jpg',
     sample: false,
   },
   {

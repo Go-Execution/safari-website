@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowUpRight,
@@ -9,17 +9,13 @@ import {
   Compass,
   Phone,
   Quote,
-  ChevronLeft,
-  ChevronRight,
   Play,
-  Pause,
-  MapPin,
+  X,
 } from 'lucide-react';
 import { packages, services, testimonials, SITE } from '@/data/content';
 import PackageCard from '@/components/PackageCard';
 
 const heroImage = 'https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&h=1080&w=1920';
-const aboutImage = 'https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80';
 const ctaImage = 'https://images.pexels.com/photos/35722304/pexels-photo-35722304.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1800';
 
 const quickLinks = [
@@ -31,96 +27,8 @@ const quickLinks = [
 
 const serviceIcons: Record<string, typeof BedDouble> = { BedDouble, Users, Binoculars, Compass };
 
-const bigFiveAnimals = [
-  {
-    id: 'elephant',
-    name: 'African Elephant',
-    setswana: 'Tlou',
-    scientific: 'Loxodonta africana',
-    image: '/assets/images/big5/elephant.jpg',
-    tag: "Earth's Largest Population",
-    stats: '130,000+ free-roaming in Botswana',
-    primaryHabitat: 'Chobe Riverfront & Okavango Waterways',
-    bestEncounter: 'Golden hour riverboat cruises & game drives',
-    description:
-      'Botswana is home to over 130,000 African elephants — the greatest concentration anywhere on Earth. Witness matriarchs guiding multi-generational family herds to drink, splash, and feed along the lush riverfronts of Chobe and secluded delta channels.',
-  },
-  {
-    id: 'lion',
-    name: 'African Lion',
-    setswana: 'Tau',
-    scientific: 'Panthera leo',
-    image: '/assets/images/big5/lion.jpg',
-    tag: 'Apex Predator of the Savanna',
-    stats: 'Legendary Savuti & Moremi Prides',
-    primaryHabitat: 'Savuti Marsh & Moremi Game Reserve',
-    bestEncounter: 'Dawn game tracking & dusk waterhole vigils',
-    description:
-      "Botswana's lions are celebrated globally for their imposing physical stature, audacious hunting tactics, and famous daytime water crossings. In Savuti and Moremi, dominant prides rule expansive floodplains and dense woodlands with regal majesty.",
-  },
-  {
-    id: 'leopard',
-    name: 'African Leopard',
-    setswana: 'Nkwe',
-    scientific: 'Panthera pardus',
-    image: '/assets/images/big5/leopard.jpg',
-    tag: 'Master of Stealth & Elegance',
-    stats: 'Dense Khwai & Delta Populations',
-    primaryHabitat: 'Riverine Forests & Leadwood Canopies',
-    bestEncounter: 'Guided night spotlight drives & river tracking',
-    description:
-      'Solitary, elusive, and mesmerisingly graceful. Botswana boasts one of the highest leopard densities in Southern Africa, particularly along the Khwai River where these spotted predators drape effortlessly across high acacia branches, surveying the African dusk.',
-  },
-  {
-    id: 'buffalo',
-    name: 'Cape Buffalo',
-    setswana: 'Nare',
-    scientific: 'Syncerus caffer',
-    image: '/assets/images/big5/buffalo.jpg',
-    tag: 'The Indomitable Titan',
-    stats: 'Super-Herds of 500+ Strong',
-    primaryHabitat: 'Okavango Floodplains & Linyanti Swamps',
-    bestEncounter: 'Open 4x4 wilderness drives & delta crossings',
-    description:
-      'Known for their imposing fused horn boss and fierce loyalty, Cape buffalo are one of the most formidable forces in the African wilderness. Watch super-herds numbering in the hundreds kick up golden plumes of dust across fertile delta floodplains.',
-  },
-  {
-    id: 'rhino',
-    name: 'White & Black Rhino',
-    setswana: 'Tshukudu',
-    scientific: 'Ceratotherium simum',
-    image: '/assets/images/big5/rhino.jpg',
-    tag: 'Living Prehistoric Marvel',
-    stats: 'Fiercely Guarded Sanctuaries',
-    primaryHabitat: 'Khama Rhino Sanctuary & Delta Sanctuaries',
-    bestEncounter: 'Guided bush tracking & sanctuary safaris',
-    description:
-      'Seeing a rhinoceros in the wild is one of the rarest, most poignant wildlife encounters in modern Africa. Protected around the clock by dedicated conservation rangers, Botswana’s sanctuaries provide safe haven for both white and black rhinos to flourish.',
-  },
-];
-
 export default function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    if (!isPlaying || isHovered) return;
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % bigFiveAnimals.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [isPlaying, isHovered]);
-
-  const handlePrev = () => {
-    setCurrentSlide((prev) => (prev - 1 + bigFiveAnimals.length) % bigFiveAnimals.length);
-  };
-
-  const handleNext = () => {
-    setCurrentSlide((prev) => (prev + 1) % bigFiveAnimals.length);
-  };
-
-  const activeAnimal = bigFiveAnimals[currentSlide];
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
     <div className="bg-sand">
@@ -139,7 +47,7 @@ export default function Home() {
               <p className="mt-7 text-lg lg:text-body-lg text-cream/80 leading-relaxed max-w-xl">
                 Safari Knight Tours is a registered Botswana travel management company offering fully customised safari and holiday experiences across Botswana and beyond.
               </p>
-              <div className="mt-9 flex flex-wrap gap-4">
+              <div className="mt-9 flex flex-wrap items-center gap-4">
                 <Link to="/plan-your-trip" className="inline-flex items-center gap-2 bg-terracotta text-cream font-semibold px-8 py-4 hover:bg-terracotta-light transition-colors shadow-sm group">
                   Plan Your Trip
                   <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -147,6 +55,16 @@ export default function Home() {
                 <Link to="/packages" className="inline-flex items-center gap-2 border border-cream/35 text-cream font-semibold px-8 py-4 hover:bg-cream hover:text-espresso transition-colors">
                   View Packages
                 </Link>
+                <button
+                  type="button"
+                  onClick={() => setIsVideoModalOpen(true)}
+                  className="inline-flex items-center gap-2.5 bg-espresso/70 hover:bg-espresso text-cream font-medium px-6 py-4 border border-cream/25 hover:border-amber transition-all cursor-pointer backdrop-blur-md group"
+                >
+                  <span className="w-7 h-7 rounded-full bg-amber/20 flex items-center justify-center text-amber group-hover:bg-amber group-hover:text-espresso transition-colors">
+                    <Play size={13} className="fill-current translate-x-0.5" />
+                  </span>
+                  <span>Watch Big 5 Video</span>
+                </button>
               </div>
             </div>
           </div>
@@ -206,211 +124,32 @@ export default function Home() {
                 <ArrowRight size={16} className="text-terracotta group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-            <div className="order-1 lg:order-2 relative">
-              <div className="overflow-hidden shadow-md">
-                <div className="aspect-[5/4]">
-                  <img src={aboutImage} alt="Majestic male lion surveying the Botswana wilderness" className="w-full h-full object-cover object-center" loading="lazy" />
+            <div className="order-1 lg:order-2">
+              <div className="relative overflow-hidden shadow-2xl border-2 border-espresso/15 bg-espresso group">
+                <div className="aspect-video w-full bg-black relative">
+                  <iframe
+                    src="https://www.youtube-nocookie.com/embed/P8frC_cLLD4?rel=0&modestbranding=1"
+                    title="Botswana Big 5 Safari Wildlife Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                  />
                 </div>
+              </div>
+              <div className="mt-3 flex items-center justify-between text-xs text-inkSoft">
+                <span className="flex items-center gap-2 font-medium">
+                  <span className="w-2 h-2 rounded-full bg-amber animate-pulse" />
+                  The Big Five of Botswana — 4K Wildlife Introduction
+                </span>
+                <span className="italic text-inkSoft/70">Okavango &amp; Chobe</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* The Big 5 Wildlife Showcase — Interactive Slideshow */}
-      <section className="py-20 lg:py-32 bg-espresso text-cream overflow-hidden relative">
-        <div className="mx-auto max-w-content px-5 lg:px-12">
-          {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 lg:mb-14">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber/15 border border-amber/30 text-amber text-xs font-semibold tracking-widest uppercase mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
-                The Big Five of Botswana
-              </div>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-h2 font-light text-cream leading-tight max-w-2xl text-balance">
-                Encounter Africa&apos;s Legendary Big Five
-              </h2>
-              <p className="mt-4 text-cream/70 text-base lg:text-lg max-w-2xl leading-relaxed">
-                Botswana is one of Africa&apos;s last pristine strongholds where all five iconic species roam completely free across unfenced wilderness.
-              </p>
-            </div>
 
-            {/* Slider Controls (Auto toggle + Prev/Next) */}
-            <div className="flex items-center gap-2.5 self-start md:self-end">
-              <button
-                type="button"
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="h-11 px-3.5 flex items-center gap-2 border border-cream/20 bg-cream/5 hover:bg-cream/10 text-cream/80 hover:text-cream hover:border-amber transition-all text-xs tracking-wider uppercase cursor-pointer"
-                title={isPlaying ? "Pause auto-slide" : "Play auto-slide"}
-                aria-label={isPlaying ? "Pause slideshow" : "Play slideshow"}
-              >
-                {isPlaying ? <Pause size={14} className="text-amber" /> : <Play size={14} className="text-amber" />}
-                <span className="hidden sm:inline">{isPlaying ? 'Auto' : 'Paused'}</span>
-              </button>
-              <button
-                type="button"
-                onClick={handlePrev}
-                className="w-11 h-11 flex items-center justify-center border border-cream/20 bg-cream/5 hover:bg-cream/10 text-cream/80 hover:text-cream hover:border-amber transition-all cursor-pointer"
-                aria-label="Previous animal"
-              >
-                <ChevronLeft size={20} />
-              </button>
-              <button
-                type="button"
-                onClick={handleNext}
-                className="w-11 h-11 flex items-center justify-center border border-cream/20 bg-cream/5 hover:bg-cream/10 text-cream/80 hover:text-cream hover:border-amber transition-all cursor-pointer"
-                aria-label="Next animal"
-              >
-                <ChevronRight size={20} />
-              </button>
-            </div>
-          </div>
-
-          {/* Quick Animal Tabs / Indicators */}
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 lg:gap-3 mb-8 lg:mb-12">
-            {bigFiveAnimals.map((animal, idx) => {
-              const isActive = currentSlide === idx;
-              return (
-                <button
-                  key={animal.id}
-                  type="button"
-                  onClick={() => setCurrentSlide(idx)}
-                  className={`text-left p-3 lg:p-4 border transition-all duration-300 relative group cursor-pointer ${
-                    isActive
-                      ? 'bg-cream/10 border-amber text-cream shadow-md'
-                      : 'bg-cream/5 border-cream/10 text-cream/60 hover:text-cream hover:bg-cream/[0.08] hover:border-cream/25'
-                  }`}
-                >
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className={`text-xs font-mono tracking-wider transition-colors ${isActive ? 'text-amber font-semibold' : 'text-cream/40 group-hover:text-amber/70'}`}>
-                      0{idx + 1}
-                    </span>
-                    {isActive ? (
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber shadow-[0_0_8px_#f59e0b]" />
-                    ) : (
-                      <span className="text-[10px] text-cream/30 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
-                        View
-                      </span>
-                    )}
-                  </div>
-                  <div className="font-display text-base lg:text-lg font-medium leading-snug">
-                    {animal.name.replace('African ', '')}
-                  </div>
-                  <div className="text-[11px] text-cream/45 italic truncate mt-0.5">
-                    {animal.setswana}
-                  </div>
-                  {isActive && (
-                    <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-amber" />
-                  )}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Main Slide Stage */}
-          <div
-            className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            {/* Left: Large High-Resolution Animal Photo */}
-            <div className="lg:col-span-7 relative group">
-              <div className="overflow-hidden shadow-2xl relative border border-cream/15 bg-espresso-dark aspect-[16/10]">
-                <img
-                  key={activeAnimal.id}
-                  src={activeAnimal.image}
-                  alt={activeAnimal.name}
-                  className="w-full h-full object-cover object-center animate-fade-in transition-transform duration-700 group-hover:scale-105"
-                  loading="eager"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-espresso/85 via-espresso/15 to-transparent pointer-events-none" />
-
-                {/* Floating Tag */}
-                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-espresso/85 backdrop-blur-md border border-cream/20 text-amber text-xs font-medium tracking-wide">
-                    {activeAnimal.tag}
-                  </span>
-                </div>
-
-                {/* Bottom Bar inside image */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-cream/90 backdrop-blur-md bg-espresso/80 border border-cream/15 px-4 py-2.5">
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-amber font-semibold">0{currentSlide + 1} / 05</span>
-                    <span className="text-cream/40">•</span>
-                    <span className="font-medium tracking-wide">{activeAnimal.name}</span>
-                  </div>
-                  <span className="text-cream/60 italic hidden sm:inline">{activeAnimal.scientific}</span>
-                </div>
-
-                {/* Auto-play progress bar */}
-                {isPlaying && !isHovered && (
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-cream/10 overflow-hidden">
-                    <div key={currentSlide} className="h-full bg-amber animate-big5-progress" />
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Right: Curated Editorial Story & Facts */}
-            <div className="lg:col-span-5 flex flex-col justify-center">
-              <div key={activeAnimal.id} className="animate-fade-in">
-                <div className="flex items-center gap-2 text-amber text-xs sm:text-sm font-semibold tracking-wider uppercase mb-2">
-                  <span>Setswana: <strong className="italic">{activeAnimal.setswana}</strong></span>
-                  <span className="text-cream/30">•</span>
-                  <span className="text-cream/60 italic font-normal">{activeAnimal.scientific}</span>
-                </div>
-
-                <h3 className="font-display text-3xl sm:text-4xl lg:text-5xl font-light text-cream leading-tight mb-4">
-                  {activeAnimal.name}
-                </h3>
-
-                <p className="text-cream/75 text-base sm:text-lg leading-relaxed mb-6 font-light">
-                  {activeAnimal.description}
-                </p>
-
-                {/* Information Callout Boxes */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                  <div className="bg-cream/5 border border-cream/10 p-3.5">
-                    <div className="flex items-center gap-2 text-amber text-xs font-semibold tracking-wider uppercase mb-1">
-                      <MapPin size={13} />
-                      <span>Primary Territory</span>
-                    </div>
-                    <p className="text-cream/85 text-xs sm:text-sm font-medium leading-snug">
-                      {activeAnimal.primaryHabitat}
-                    </p>
-                  </div>
-                  <div className="bg-cream/5 border border-cream/10 p-3.5">
-                    <div className="flex items-center gap-2 text-amber text-xs font-semibold tracking-wider uppercase mb-1">
-                      <Compass size={13} />
-                      <span>Best Encounter</span>
-                    </div>
-                    <p className="text-cream/85 text-xs sm:text-sm font-medium leading-snug">
-                      {activeAnimal.bestEncounter}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Call to Actions */}
-                <div className="flex flex-wrap items-center gap-4 pt-2">
-                  <Link
-                    to="/plan-your-trip"
-                    className="inline-flex items-center gap-2 bg-terracotta text-cream font-semibold px-6 py-3.5 hover:bg-terracotta-light transition-all shadow-md group"
-                  >
-                    Plan Your Big 5 Safari
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <Link
-                    to="/packages"
-                    className="inline-flex items-center gap-2 text-cream/70 hover:text-amber text-sm font-medium transition-colors border-b border-cream/20 hover:border-amber pb-1"
-                  >
-                    View Safari Packages
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* What We Offer — numbered list with large numbers */}
       <section className="py-20 lg:py-32 bg-sand">
@@ -539,6 +278,37 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* 4K Big 5 Video Lightbox Modal */}
+      {isVideoModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-espresso/90 backdrop-blur-md p-4 sm:p-6 animate-fade-in">
+          <div className="relative w-full max-w-4xl bg-espresso border border-cream/20 shadow-2xl overflow-hidden">
+            <div className="flex items-center justify-between px-4 py-3 border-b border-cream/15 text-cream">
+              <div className="flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-amber">
+                <span className="w-2 h-2 rounded-full bg-amber animate-pulse" />
+                Botswana Big 5 Safari Film in 4K
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsVideoModalOpen(false)}
+                className="w-8 h-8 flex items-center justify-center text-cream/70 hover:text-cream hover:bg-cream/10 transition-colors cursor-pointer"
+                aria-label="Close video"
+              >
+                <X size={20} />
+              </button>
+            </div>
+            <div className="aspect-video w-full bg-black">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/P8frC_cLLD4?autoplay=1&rel=0&modestbranding=1"
+                title="Botswana Big 5 Safari & Wildlife Film"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full border-0"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

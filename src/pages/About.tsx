@@ -7,9 +7,9 @@ const heroImage = 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?
 const pillarImages = [
   '/assets/images/safari-camp-history.jpg',
   'https://images.pexels.com/photos/35722304/pexels-photo-35722304.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1800',
-  'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80',
+  '/assets/images/southern-africa-map.jpg',
   'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=1200&q=80',
-  'https://images.unsplash.com/photo-1528722828814-77b9b83aafb2?auto=format&fit=crop&w=1200&q=80',
+  '/assets/images/botswana-flag.jpg',
 ];
 
 const differences = [
@@ -31,8 +31,7 @@ export default function About() {
         </div>
         <div className="relative h-full flex items-end pb-14 lg:pb-20">
           <div className="mx-auto max-w-content px-5 lg:px-12 w-full">
-            <p className="eyebrow text-amber mb-4 animate-fade-up">About Safari Knight</p>
-            <h1 className="font-display text-4xl lg:text-h1 font-light text-cream animate-fade-up">About Us</h1>
+            <h1 className="font-display text-4xl lg:text-h1 font-light text-cream animate-fade-up">Safari Knight</h1>
           </div>
         </div>
       </section>
@@ -45,7 +44,7 @@ export default function About() {
               Safari Knight Tours is a travel management company. As a travel agency we offer a full customised safari and holidays experience to exciting destinations throughout Botswana and beyond. Safari Knight Tours is a registered company located in the heart of Botswana.
             </p>
             <p className="text-base lg:text-body-lg text-inkSoft leading-relaxed">
-              As an experienced tour operator, we personalise our safaris according to our customer's tastes and needs. Safari Knight Tours combines luxury, style, service, and authenticity to provide a unique, exciting adventure. All of our safaris are conducted by talented, responsible, and caring guides, in comfortable 4x4 safari vehicles.
+              At Safari Knight Tours, we are committed to delivering exceptional safari experiences that showcase the natural beauty and wildlife of Botswana. Our services include guided wildlife safaris, mobile camping adventures, and immersive nature experiences tailored to our guests’ interests. We strive to provide professional service, personalised attention, and memorable journeys while promoting responsible tourism and the conservation of Botswana’s unique natural heritage.
             </p>
           </div>
         </div>
