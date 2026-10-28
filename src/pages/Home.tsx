@@ -128,7 +128,7 @@ export default function Home() {
               <div className="relative overflow-hidden shadow-2xl border-2 border-espresso/15 bg-espresso group">
                 <div className="aspect-video w-full bg-black relative">
                   <iframe
-                    src="https://www.youtube-nocookie.com/embed/P8frC_cLLD4?rel=0&modestbranding=1"
+                    src="https://www.youtube-nocookie.com/embed/uPBVCvs91eM?rel=0&modestbranding=1"
                     title="Botswana Big 5 Safari Wildlife Video"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -299,7 +299,7 @@ export default function Home() {
             </div>
             <div className="aspect-video w-full bg-black">
               <iframe
-                src="https://www.youtube-nocookie.com/embed/P8frC_cLLD4?autoplay=1&rel=0&modestbranding=1"
+                src="https://www.youtube-nocookie.com/embed/uPBVCvs91eM?autoplay=1&rel=0&modestbranding=1"
                 title="Botswana Big 5 Safari & Wildlife Film"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
