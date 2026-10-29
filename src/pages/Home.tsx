@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowUpRight,
@@ -11,11 +11,13 @@ import {
   Quote,
   Play,
   X,
+  Volume2,
+  VolumeX,
 } from 'lucide-react';
 import { packages, services, testimonials, SITE } from '@/data/content';
 import PackageCard from '@/components/PackageCard';
 
-const heroImage = 'https://images.pexels.com/photos/35994684/pexels-photo-35994684.jpeg?auto=compress&cs=tinysrgb&h=1080&w=1920';
+const heroImage = '/assets/videos/hero-poster.jpg';
 const ctaImage = 'https://images.pexels.com/photos/35722304/pexels-photo-35722304.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1800';
 
 const quickLinks = [
@@ -29,14 +31,40 @@ const serviceIcons: Record<string, typeof BedDouble> = { BedDouble, Users, Binoc
 
 export default function Home() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [isHeroMuted, setIsHeroMuted] = useState(true);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleHeroSound = () => {
+    if (heroVideoRef.current) {
+      heroVideoRef.current.muted = !isHeroMuted;
+      setIsHeroMuted(!isHeroMuted);
+    }
+  };
 
   return (
     <div className="bg-sand">
-      {/* Hero — full-bleed, dramatic */}
-      <section className="relative h-[92vh] min-h-[620px] w-full overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroImage} alt="Herd of African elephants traversing the savannah at sunset" className="w-full h-full object-cover object-center animate-slow-zoom" />
-          <div className="absolute inset-0 bg-gradient-to-b from-espresso/40 via-espresso/20 to-espresso/80" />
+      {/* Hero — full-bleed, dramatic video background */}
+      <section className="relative h-[92vh] min-h-[620px] w-full overflow-hidden bg-espresso">
+        <div className="absolute inset-0 overflow-hidden">
+          <video
+            ref={heroVideoRef}
+            autoPlay
+            loop
+            muted={isHeroMuted}
+            playsInline
+            poster="/assets/videos/hero-poster.jpg"
+            className="w-full h-full object-cover object-[center_60%] transition-opacity duration-700"
+          >
+            <source src="/assets/videos/hero-safari.mp4" type="video/mp4" />
+            <img
+              src="/assets/videos/hero-poster.jpg"
+              alt="Majestic lion in the Botswana wilderness"
+              className="w-full h-full object-cover object-[center_60%]"
+            />
+          </video>
+          {/* Subtle cinematic overlays for legibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-espresso/95 via-espresso/45 to-espresso/35" />
+          <div className="absolute inset-0 bg-gradient-to-r from-espresso/80 via-espresso/40 to-transparent hidden lg:block" />
         </div>
         <div className="relative h-full flex flex-col justify-end pb-16 lg:pb-24">
           <div className="mx-auto max-w-content px-5 lg:px-12 w-full">
@@ -69,6 +97,26 @@ export default function Home() {
             </div>
           </div>
         </div>
+        {/* Sound toggle button */}
+        <div className="absolute bottom-6 left-6 lg:left-12 z-20 flex items-center">
+          <button
+            type="button"
+            onClick={toggleHeroSound}
+            className="flex items-center gap-2 bg-espresso/80 hover:bg-espresso text-cream px-3.5 py-2 text-xs border border-cream/25 hover:border-amber backdrop-blur-md transition-all cursor-pointer shadow-md group"
+            title={isHeroMuted ? "Unmute video sound" : "Mute video sound"}
+            aria-label={isHeroMuted ? "Unmute video" : "Mute video"}
+          >
+            {isHeroMuted ? (
+              <VolumeX size={15} className="text-cream/70 group-hover:text-amber transition-colors" />
+            ) : (
+              <Volume2 size={15} className="text-amber animate-pulse" />
+            )}
+            <span className="font-medium tracking-wide">
+              {isHeroMuted ? 'Sound Off' : 'Sound On'}
+            </span>
+          </button>
+        </div>
+
         {/* Scroll hint */}
         <div className="absolute bottom-6 right-6 lg:right-12 hidden lg:flex flex-col items-center gap-2 text-cream/40">
           <span className="text-xs tracking-widest rotate-90 origin-center mb-8">SCROLL</span>
@@ -128,8 +176,8 @@ export default function Home() {
               <div className="relative overflow-hidden shadow-2xl border-2 border-espresso/15 bg-espresso group">
                 <div className="aspect-video w-full bg-black relative">
                   <iframe
-                    src="https://www.youtube-nocookie.com/embed/uPBVCvs91eM?rel=0&modestbranding=1"
-                    title="Botswana Big 5 Safari Wildlife Video"
+                    src="https://www.youtube-nocookie.com/embed/WLgFZFRRH-E?rel=0&modestbranding=1"
+                    title="Africa's Big Five Wildlife Safari"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="w-full h-full border-0"
@@ -140,7 +188,7 @@ export default function Home() {
               <div className="mt-3 flex items-center justify-between text-xs text-inkSoft">
                 <span className="flex items-center gap-2 font-medium">
                   <span className="w-2 h-2 rounded-full bg-amber animate-pulse" />
-                  The Big Five of Botswana — 4K Wildlife Introduction
+                  Africa's Big Five — Wildlife Introduction
                 </span>
                 <span className="italic text-inkSoft/70">Okavango &amp; Chobe</span>
               </div>
@@ -286,7 +334,7 @@ export default function Home() {
             <div className="flex items-center justify-between px-4 py-3 border-b border-cream/15 text-cream">
               <div className="flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-amber">
                 <span className="w-2 h-2 rounded-full bg-amber animate-pulse" />
-                Botswana Big 5 Safari Film in 4K
+                Africa's Big Five Safari Film
               </div>
               <button
                 type="button"
@@ -299,8 +347,8 @@ export default function Home() {
             </div>
             <div className="aspect-video w-full bg-black">
               <iframe
-                src="https://www.youtube-nocookie.com/embed/uPBVCvs91eM?autoplay=1&rel=0&modestbranding=1"
-                title="Botswana Big 5 Safari & Wildlife Film"
+                src="https://www.youtube-nocookie.com/embed/WLgFZFRRH-E?autoplay=1&rel=0&modestbranding=1"
+                title="Africa's Big Five Safari Film"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full border-0"
