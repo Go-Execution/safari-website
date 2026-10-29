@@ -45,7 +45,8 @@ export default function Home() {
     <div className="bg-sand">
       {/* Hero — full-bleed, dramatic video background */}
       <section className="relative h-[92vh] min-h-[620px] w-full overflow-hidden bg-espresso">
-        <div className="absolute inset-0 overflow-hidden">
+        {/* Background Video Layer — Mobile: Full-bleed cover | Desktop: Right/Center-right portrait frame */}
+        <div className="absolute inset-0 lg:left-auto lg:right-0 lg:w-[50%] xl:w-[48%] 2xl:w-[45%] h-full overflow-hidden">
           <video
             ref={heroVideoRef}
             autoPlay
@@ -53,22 +54,27 @@ export default function Home() {
             muted={isHeroMuted}
             playsInline
             poster="/assets/videos/hero-poster.jpg"
-            className="w-full h-full object-cover object-[center_60%] transition-opacity duration-700"
+            className="w-full h-full object-cover object-[center_45%] transition-opacity duration-700"
           >
             <source src="/assets/videos/hero-safari.mp4" type="video/mp4" />
             <img
               src="/assets/videos/hero-poster.jpg"
               alt="Majestic lion in the Botswana wilderness"
-              className="w-full h-full object-cover object-[center_60%]"
+              className="w-full h-full object-cover object-[center_45%]"
             />
           </video>
-          {/* Subtle cinematic overlays for legibility */}
-          <div className="absolute inset-0 bg-gradient-to-t from-espresso/95 via-espresso/45 to-espresso/35" />
-          <div className="absolute inset-0 bg-gradient-to-r from-espresso/80 via-espresso/40 to-transparent hidden lg:block" />
+
+          {/* Desktop Edge Gradients — Blends video smoothly into dark espresso canvas */}
+          <div className="hidden lg:block absolute inset-y-0 left-0 w-36 bg-gradient-to-r from-espresso via-espresso/80 to-transparent pointer-events-none" />
+          <div className="hidden lg:block absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-espresso to-transparent pointer-events-none" />
+          <div className="hidden lg:block absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-espresso/50 to-transparent pointer-events-none" />
+
+          {/* Mobile Overlay — Ensures 100% legibility on full-screen vertical video */}
+          <div className="block lg:hidden absolute inset-0 bg-gradient-to-t from-espresso/95 via-espresso/50 to-espresso/35 pointer-events-none" />
         </div>
         <div className="relative h-full flex flex-col justify-end pb-16 lg:pb-24">
           <div className="mx-auto max-w-content px-5 lg:px-12 w-full">
-            <div className="max-w-3xl animate-fade-up">
+            <div className="max-w-xl lg:max-w-xl xl:max-w-2xl animate-fade-up z-10">
               <h1 className="font-display text-5xl sm:text-6xl lg:text-hero font-light italic text-cream leading-[0.95] text-balance">
                 Let's rumble<br />in the jungle
               </h1>
