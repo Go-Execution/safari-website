@@ -9,8 +9,6 @@ import {
   Compass,
   Phone,
   Quote,
-  Play,
-  X,
   Volume2,
   VolumeX,
 } from 'lucide-react';
@@ -18,6 +16,7 @@ import { packages, services, testimonials, SITE } from '@/data/content';
 import PackageCard from '@/components/PackageCard';
 
 const heroImage = '/assets/videos/hero-poster.jpg';
+const aboutImage = 'https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1200&q=80';
 const ctaImage = 'https://images.pexels.com/photos/35722304/pexels-photo-35722304.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1800';
 
 const quickLinks = [
@@ -30,7 +29,6 @@ const quickLinks = [
 const serviceIcons: Record<string, typeof BedDouble> = { BedDouble, Users, Binoculars, Compass };
 
 export default function Home() {
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isHeroMuted, setIsHeroMuted] = useState(true);
   const heroVideoRef = useRef<HTMLVideoElement>(null);
 
@@ -89,16 +87,7 @@ export default function Home() {
                 <Link to="/packages" className="inline-flex items-center gap-2 border border-cream/35 text-cream font-semibold px-8 py-4 hover:bg-cream hover:text-espresso transition-colors">
                   View Packages
                 </Link>
-                <button
-                  type="button"
-                  onClick={() => setIsVideoModalOpen(true)}
-                  className="inline-flex items-center gap-2.5 bg-espresso/70 hover:bg-espresso text-cream font-medium px-6 py-4 border border-cream/25 hover:border-amber transition-all cursor-pointer backdrop-blur-md group"
-                >
-                  <span className="w-7 h-7 rounded-full bg-amber/20 flex items-center justify-center text-amber group-hover:bg-amber group-hover:text-espresso transition-colors">
-                    <Play size={13} className="fill-current translate-x-0.5" />
-                  </span>
-                  <span>Watch Big 5 Video</span>
-                </button>
+
               </div>
             </div>
           </div>
@@ -178,25 +167,11 @@ export default function Home() {
                 <ArrowRight size={16} className="text-terracotta group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-            <div className="order-1 lg:order-2">
-              <div className="relative overflow-hidden shadow-2xl border-2 border-espresso/15 bg-espresso group">
-                <div className="aspect-video w-full bg-black relative">
-                  <iframe
-                    src="https://www.youtube-nocookie.com/embed/WLgFZFRRH-E?rel=0&modestbranding=1"
-                    title="Africa's Big Five Wildlife Safari"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full border-0"
-                    loading="lazy"
-                  />
+            <div className="order-1 lg:order-2 relative">
+              <div className="overflow-hidden shadow-md">
+                <div className="aspect-[5/4]">
+                  <img src={aboutImage} alt="Majestic male lion surveying the Botswana wilderness" className="w-full h-full object-cover object-center" loading="lazy" />
                 </div>
-              </div>
-              <div className="mt-3 flex items-center justify-between text-xs text-inkSoft">
-                <span className="flex items-center gap-2 font-medium">
-                  <span className="w-2 h-2 rounded-full bg-amber animate-pulse" />
-                  Africa's Big Five — Wildlife Introduction
-                </span>
-                <span className="italic text-inkSoft/70">Okavango &amp; Chobe</span>
               </div>
             </div>
           </div>
@@ -333,36 +308,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4K Big 5 Video Lightbox Modal */}
-      {isVideoModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-espresso/90 backdrop-blur-md p-4 sm:p-6 animate-fade-in">
-          <div className="relative w-full max-w-4xl bg-espresso border border-cream/20 shadow-2xl overflow-hidden">
-            <div className="flex items-center justify-between px-4 py-3 border-b border-cream/15 text-cream">
-              <div className="flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-amber">
-                <span className="w-2 h-2 rounded-full bg-amber animate-pulse" />
-                Africa's Big Five Safari Film
-              </div>
-              <button
-                type="button"
-                onClick={() => setIsVideoModalOpen(false)}
-                className="w-8 h-8 flex items-center justify-center text-cream/70 hover:text-cream hover:bg-cream/10 transition-colors cursor-pointer"
-                aria-label="Close video"
-              >
-                <X size={20} />
-              </button>
-            </div>
-            <div className="aspect-video w-full bg-black">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/WLgFZFRRH-E?autoplay=1&rel=0&modestbranding=1"
-                title="Africa's Big Five Safari Film"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full border-0"
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
